@@ -75,3 +75,63 @@
   version = "v1.4.7"
 
 [[projects]]
+  name = "github.com/geekypanda/httpcache"
+  packages = ["."]
+  revision = "76cace3b49b4d5d13592f13e4e7024d7107a4043"
+  version = "v0.0.1"
+
+[[projects]]
+  name = "github.com/go-ini/ini"
+  packages = ["."]
+  revision = "32e4c1e6bc4e7d0d8451aa6b75200d19e37a536a"
+  version = "v1.32.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/golang/protobuf"
+  packages = ["proto","protoc-gen-go/descriptor","ptypes","ptypes/any","ptypes/duration","ptypes/timestamp"]
+  revision = "c65a0412e71e8b9b3bfd22925720d23c0f054237"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/golang/snappy"
+  packages = ["."]
+  revision = "553a641470496b2327abcac10b36396bd98e45c9"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/google/certificate-transparency-go"
+  packages = [".","asn1","tls","x509","x509/pkix"]
+  revision = "565dc33ed1f4f57523d464a59b3ece8c93944dce"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/google/go-github"
+  packages = ["github"]
+  revision = "b1f138353a6287df5156971b3963e9107eca06a1"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/google/go-querystring"
+  packages = ["query"]
+  revision = "53e6ce116135b80d037921a7fdd5138cf32d7a8a"
+
+[[projects]]
+  name = "github.com/googleapis/gax-go"
+  packages = ["."]
+  revision = "317e0006254c44a0ac427cc52a0e083ff0b9622f"
+  version = "v2.0.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/hashicorp/go-version"
+  packages = ["."]
+  revision = "4fe82ae3040f80a03d04d2cccb5606a626b8e1ee"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/hashicorp/hcl"
+  packages = [".","hcl/ast","hcl/parser","hcl/scanner","hcl/strconv","hcl/token","json/parser","json/scanner","json/token"]
+  revision = "23c074d0eceb2b8a5bfdbb271ab780cde70f05a8"
+
+[[projects]]

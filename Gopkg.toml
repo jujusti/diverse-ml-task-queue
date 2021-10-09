@@ -1,3 +1,7 @@
 [[constraint]]
   name = "github.com/MorpheoOrg/morpheo-go-packages"
-  branch = "mast
+  branch = "master"
+
+[[constraint]]
+  name = "gopkg.in/kataras/iris.v6"
+  version

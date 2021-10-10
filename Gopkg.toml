@@ -5,4 +5,7 @@
 [[constraint]]
   name = "gopkg.in/kataras/iris.v6"
   version = "6.2.0"
-  source = "https://github.com/MorpheoOrg/iris
+  source = "https://github.com/MorpheoOrg/iris.git"
+
+[[override]]
+  name = "github.com/russross/blackfri

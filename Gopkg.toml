@@ -8,4 +8,8 @@
   source = "https://github.com/MorpheoOrg/iris.git"
 
 [[override]]
-  name = "github.com/russross/blackfri
+  name = "github.com/russross/blackfriday"
+  revision = "0ba0f2"
+
+[[constraint]]
+  name = "github.com

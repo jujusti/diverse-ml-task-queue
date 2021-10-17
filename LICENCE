@@ -69,3 +69,69 @@ réserve de le conserver en l'état, sans ajout ni suppression de clauses.
 Ce contrat est susceptible de s'appliquer à tout logiciel dont le
 titulaire des droits patrimoniaux décide de soumettre l'exploitation aux
 dispositions qu'il contient.
+
+Une liste de questions fréquemment posées se trouve sur le site web
+officiel de la famille des licences CeCILL
+(http://www.cecill.info/index.fr.html) pour toute clarification qui
+serait nécessaire.
+
+
+    Article 1 - DEFINITIONS
+
+Dans ce contrat, les termes suivants, lorsqu'ils seront écrits avec une
+lettre capitale, auront la signification suivante:
+
+Contrat: désigne le présent contrat de licence, ses éventuelles versions
+postérieures et annexes.
+
+Logiciel: désigne le logiciel sous sa forme de Code Objet et/ou de Code
+Source et le cas échéant sa documentation, dans leur état au moment de
+l'acceptation du Contrat par le Licencié.
+
+Logiciel Initial: désigne le Logiciel sous sa forme de Code Source et
+éventuellement de Code Objet et le cas échéant sa documentation, dans
+leur état au moment de leur première diffusion sous les termes du Contrat.
+
+Logiciel Modifié: désigne le Logiciel modifié par au moins une
+Contribution.
+
+Code Source: désigne l'ensemble des instructions et des lignes de
+programme du Logiciel et auquel l'accès est nécessaire en vue de
+modifier le Logiciel.
+
+Code Objet: désigne les fichiers binaires issus de la compilation du
+Code Source.
+
+Titulaire: désigne le ou les détenteurs des droits patrimoniaux d'auteur
+sur le Logiciel Initial.
+
+Licencié: désigne le ou les utilisateurs du Logiciel ayant accepté le
+Contrat.
+
+Contributeur: désigne le Licencié auteur d'au moins une Contribution.
+
+Concédant: désigne le Titulaire ou toute personne physique ou morale
+distribuant le Logiciel sous le Contrat.
+
+Contribution: désigne l'ensemble des modifications, corrections,
+traductions, adaptations et/ou nouvelles fonctionnalités intégrées dans
+le Logiciel par tout Contributeur, ainsi que tout Module Interne.
+
+Module: désigne un ensemble de fichiers sources y compris leur
+documentation qui permet de réaliser des fonctionnalités ou services
+supplémentaires à ceux fournis par le Logiciel.
+
+Module Externe: désigne tout Module, non dérivé du Logiciel, tel que ce
+Module et le Logiciel s'exécutent dans des espaces d'adressage
+différents, l'un appelant l'autre au moment de leur exécution.
+
+Module Interne: désigne tout Module lié au Logiciel de telle sorte
+qu'ils s'exécutent dans le même espace d'adressage.
+
+GNU GPL: désigne la GNU General Public License dans sa version 2 ou
+toute version ultérieure, telle que publiée par Free Software Foundation
+Inc.
+
+GNU Affero GPL: désigne la GNU Affero General Public License dans sa
+version 3 ou toute version ultérieure, telle que publiée par Free
+Software Foundation Inc.

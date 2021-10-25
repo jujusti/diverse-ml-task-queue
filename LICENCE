@@ -263,3 +263,72 @@ soit accompagnée:
  2.
 
     d'un avertissement relatif à la restriction de garantie et de
+    responsabilité du Concédant telle que prévue aux articles 8
+    <#responsabilite> et 9 <#garantie>,
+
+et que, dans le cas où seul le Code Objet du Logiciel est redistribué,
+le Licencié permette un accès effectif au Code Source complet du
+Logiciel pour une durée d'au moins 3 ans à compter de la distribution du
+logiciel, étant entendu que le coût additionnel d'acquisition du Code
+Source ne devra pas excéder le simple coût de transfert des données.
+
+
+        5.3.2 DISTRIBUTION DU LOGICIEL MODIFIE
+
+Lorsque le Licencié apporte une Contribution au Logiciel, les conditions
+de distribution du Logiciel Modifié en résultant sont alors soumises à
+l'intégralité des dispositions du Contrat.
+
+Le Licencié est autorisé à distribuer le Logiciel Modifié, sous forme de
+code source ou de code objet, à condition que cette distribution
+respecte les dispositions du Contrat dans leur totalité et soit
+accompagnée:
+
+ 1.
+
+    d'un exemplaire du Contrat,
+
+ 2.
+
+    d'un avertissement relatif à la restriction de garantie et de
+    responsabilité du Concédant telle que prévue aux articles 8
+    <#responsabilite> et 9 <#garantie>,
+
+et, dans le cas où seul le code objet du Logiciel Modifié est redistribué,
+
+ 3.
+
+    d'une note précisant les conditions d'accès effectif au code source
+    complet du Logiciel Modifié, pendant une période d'au moins 3 ans à
+    compter de la distribution du Logiciel Modifié, étant entendu que le
+    coût additionnel d'acquisition du code source ne devra pas excéder
+    le simple coût de transfert des données.
+
+
+        5.3.3 DISTRIBUTION DES MODULES EXTERNES
+
+Lorsque le Licencié a développé un Module Externe les conditions du
+Contrat ne s'appliquent pas à ce Module Externe, qui peut être distribué
+sous un contrat de licence différent.
+
+
+        5.3.4 COMPATIBILITE AVEC D'AUTRES LICENCES
+
+Le Licencié peut inclure un code soumis aux dispositions d'une des
+versions de la licence GNU GPL, GNU Affero GPL et/ou EUPL dans le
+Logiciel modifié ou non et distribuer l'ensemble sous les conditions de
+la même version de la licence GNU GPL, GNU Affero GPL et/ou EUPL.
+
+Le Licencié peut inclure le Logiciel modifié ou non dans un code soumis
+aux dispositions d'une des versions de la licence GNU GPL, GNU Affero
+GPL et/ou EUPL et distribuer l'ensemble sous les conditions de la même
+version de la licence GNU GPL, GNU Affero GPL et/ou EUPL.
+
+
+    Article 6 - PROPRIETE INTELLECTUELLE
+
+
+      6.1 SUR LE LOGICIEL INITIAL
+
+Le Titulaire est détenteur des droits patrimoniaux sur le Logiciel
+Initial. Toute utilisation du Logiciel Initial est soumise au respect

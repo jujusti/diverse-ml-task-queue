@@ -255,3 +255,66 @@ data transfer.
 
 
         5.3.2 DISTRIBUTION OF MODIFIED SOFTWARE
+
+When the Licensee makes a Contribution to the Software, the terms and
+conditions for the distribution of the resulting Modified Software
+become subject to all the provisions of this Agreement.
+
+The Licensee is authorized to distribute the Modified Software, in
+source code or object code form, provided that said distribution
+complies with all the provisions of the Agreement and is accompanied by:
+
+ 1. a copy of the Agreement,
+
+ 2. a notice relating to the limitation of both the Licensor's warranty
+    and liability as set forth in Articles 8 and 9,
+
+and, in the event that only the object code of the Modified Software is
+redistributed,
+
+ 3. a note stating the conditions of effective access to the full source
+    code of the Modified Software for a period of at least three years
+    from the distribution of the Modified Software, it being understood
+    that the additional acquisition cost of the source code shall not
+    exceed the cost of the data transfer.
+
+
+        5.3.3 DISTRIBUTION OF EXTERNAL MODULES
+
+When the Licensee has developed an External Module, the terms and
+conditions of this Agreement do not apply to said External Module, that
+may be distributed under a separate license agreement.
+
+
+        5.3.4 COMPATIBILITY WITH OTHER LICENSES
+
+The Licensee can include a code that is subject to the provisions of one
+of the versions of the GNU GPL, GNU Affero GPL and/or EUPL in the
+Modified or unmodified Software, and distribute that entire code under
+the terms of the same version of the GNU GPL, GNU Affero GPL and/or EUPL.
+
+The Licensee can include the Modified or unmodified Software in a code
+that is subject to the provisions of one of the versions of the GNU GPL,
+GNU Affero GPL and/or EUPL and distribute that entire code under the
+terms of the same version of the GNU GPL, GNU Affero GPL and/or EUPL.
+
+
+    Article 6 - INTELLECTUAL PROPERTY
+
+
+      6.1 OVER THE INITIAL SOFTWARE
+
+The Holder owns the economic rights over the Initial Software. Any or
+all use of the Initial Software is subject to compliance with the terms
+and conditions under which the Holder has elected to distribute its work
+and no one shall be entitled to modify the terms and conditions for the
+distribution of said Initial Software.
+
+The Holder undertakes that the Initial Software will remain ruled at
+least by this Agreement, for the duration set forth in Article 4.2 <#term>.
+
+
+      6.2 OVER THE CONTRIBUTIONS
+
+The Licensee who develops a Contribution is the owner of the
+intellectual property rights over this Contribution as defined by

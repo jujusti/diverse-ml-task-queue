@@ -1,4 +1,6 @@
 #
 # Copyright Morpheo Org. 2017
 #
-# contact@morp
+# contact@morpheo.co
+#
+# This software is part of the Morpheo project, an ope

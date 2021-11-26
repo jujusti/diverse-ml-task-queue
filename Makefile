@@ -14,4 +14,4 @@
 #
 # As a counterpart to the access to the source code and  rights to copy,
 # modify and redistribute granted by the license, users are provided only
-# with a
+# with a limited warranty  and the software's author,  the hol

@@ -18,4 +18,4 @@
 # economic rights,  and the successive licensors  have only  limited
 # liability.
 #
-# In this respe
+# In this respect, the user's attention is drawn to the risks

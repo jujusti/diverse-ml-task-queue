@@ -29,4 +29,4 @@
 # data to be ensured and,  more generally, to use and operate it in the
 # same conditions as regards security.
 #
-# 
+# The fact that you are presently reading this means tha

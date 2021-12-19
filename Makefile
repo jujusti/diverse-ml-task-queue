@@ -26,4 +26,7 @@
 # professionals having in-depth computer knowledge. Users are therefore
 # encouraged to load and test the software's suitability as regards their
 # requirements in conditions enabling the security of their systems and/or
-# data to be ensured and,  more generally, to use an
+# data to be ensured and,  more generally, to use and operate it in the
+# same conditions as regards security.
+#
+# 

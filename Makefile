@@ -33,4 +33,6 @@
 # knowledge of the CeCILL license and that you accept its terms.
 #
 
-# User defined variables (use env. variables to
+# User defined variables (use env. variables to override)
+DOCKER_REPO ?= registry.morpheo.io
+DOCK

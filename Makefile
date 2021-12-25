@@ -35,4 +35,6 @@
 
 # User defined variables (use env. variables to override)
 DOCKER_REPO ?= registry.morpheo.io
-DOCK
+DOCKER_TAG ?= $(shell git rev-parse --verify --short HEAD)
+
+# Targets 

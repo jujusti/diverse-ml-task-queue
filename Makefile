@@ -37,4 +37,6 @@
 DOCKER_REPO ?= registry.morpheo.io
 DOCKER_TAG ?= $(shell git rev-parse --verify --short HEAD)
 
-# Targets 
+# Targets (files & phony targets)
+TARGETS = api worker
+BIN_TARGETS =

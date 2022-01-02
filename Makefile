@@ -40,4 +40,4 @@ DOCKER_TAG ?= $(shell git rev-parse --verify --short HEAD)
 # Targets (files & phony targets)
 TARGETS = api worker
 BIN_TARGETS = $(foreach TARGET,$(TARGETS),$(TARGET)/build/target)
-BIN_CLE
+BIN_CLEAN_TARGETS = $(foreach TARGET,$(TARGETS),$(TARGET)/build/target/cl

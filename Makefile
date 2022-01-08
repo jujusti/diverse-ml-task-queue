@@ -42,4 +42,7 @@ TARGETS = api worker
 BIN_TARGETS = $(foreach TARGET,$(TARGETS),$(TARGET)/build/target)
 BIN_CLEAN_TARGETS = $(foreach TARGET,$(TARGETS),$(TARGET)/build/target/clean)
 DOCKER_TARGETS = $(foreach TARGET,$(TARGETS),$(TARGET)-docker)
-DOCKER_CLEAN_TARGETS = $(foreach TARGET,$(TARGETS),$
+DOCKER_CLEAN_TARGETS = $(foreach TARGET,$(TARGETS),$(TARGET)-docker-clean)
+
+DEP_CONTAINER = \
+	docker run

@@ -45,4 +45,5 @@ DOCKER_TARGETS = $(foreach TARGET,$(TARGETS),$(TARGET)-docker)
 DOCKER_CLEAN_TARGETS = $(foreach TARGET,$(TARGETS),$(TARGET)-docker-clean)
 
 DEP_CONTAINER = \
-	docker run
+	docker run -it --rm \
+	  --workdir "/go/src/github.com/MorpheoOrg/morp

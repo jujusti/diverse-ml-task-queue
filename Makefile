@@ -47,4 +47,7 @@ DOCKER_CLEAN_TARGETS = $(foreach TARGET,$(TARGETS),$(TARGET)-docker-clean)
 DEP_CONTAINER = \
 	docker run -it --rm \
 	  --workdir "/go/src/github.com/MorpheoOrg/morpheo-compute" \
-	  -v $${PWD}:/go/src/github.com/MorpheoOrg/
+	  -v $${PWD}:/go/src/github.com/MorpheoOrg/morpheo-compute \
+		golang:1.9
+
+## Project-wi

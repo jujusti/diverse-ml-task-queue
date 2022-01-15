@@ -52,4 +52,6 @@ DEP_CONTAINER = \
 
 ## Project-wide targets
 bin: $(BIN_TARGETS)
-bin-clean: $(BIN_CLEA
+bin-clean: $(BIN_CLEAN_TARGETS)
+docker: $(DOCKER_TARGETS)
+docker-clean: $(DOCKER

@@ -50,4 +50,6 @@ DEP_CONTAINER = \
 	  -v $${PWD}:/go/src/github.com/MorpheoOrg/morpheo-compute \
 		golang:1.9
 
-## Project-wi
+## Project-wide targets
+bin: $(BIN_TARGETS)
+bin-clean: $(BIN_CLEA

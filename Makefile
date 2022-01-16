@@ -56,4 +56,8 @@ bin-clean: $(BIN_CLEAN_TARGETS)
 docker: $(DOCKER_TARGETS)
 docker-clean: $(DOCKER_CLEAN_TARGETS)
 
-clean: docker-clean bin-clean vendor-cl
+clean: docker-clean bin-clean vendor-clean
+
+.DEFAULT: bin
+.PHONY: bin bin-clean \
+	    vendor-doc

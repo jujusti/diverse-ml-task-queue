@@ -60,4 +60,6 @@ clean: docker-clean bin-clean vendor-clean
 
 .DEFAULT: bin
 .PHONY: bin bin-clean \
-	    vendor-doc
+	    vendor-docker vendor-update vendor-replace-local \
+	    tests \
+	

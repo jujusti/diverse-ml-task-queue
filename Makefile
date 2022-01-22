@@ -62,4 +62,5 @@ clean: docker-clean bin-clean vendor-clean
 .PHONY: bin bin-clean \
 	    vendor-docker vendor-update vendor-replace-local \
 	    tests \
-	
+		docker docker-clean $(DOCKER_TARGETS) $(DOCKER_CLEAN_TARGETS)
+

@@ -64,3 +64,5 @@ clean: docker-clean bin-clean vendor-clean
 	    tests \
 		docker docker-clean $(DOCKER_TARGETS) $(DOCKER_CLEAN_TARGETS)
 
+# 1. Building
+%/build/target: %/*.go # ../morpheo-go-packages/commo

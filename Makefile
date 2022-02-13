@@ -66,4 +66,6 @@ clean: docker-clean bin-clean vendor-clean
 
 # 1. Building
 %/build/target: %/*.go # ../morpheo-go-packages/common/*.go ../morpheo-go-packages/client/*.go
-	@echo "Building $(subst /build/target,,$(@)) binary.............................
+	@echo "Building $(subst /build/target,,$(@)) binary..........................................................................."
+	@mkdir -p $(@D)
+	@CGO_

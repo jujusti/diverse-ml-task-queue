@@ -72,4 +72,5 @@ clean: docker-clean bin-clean vendor-clean
 	@# TODO: $(eval OUTPUT = $(shell go build -v -o $@ ./$(subst /build/target,,$(@)) 2>&1 | grep -v "github.com/MorpheoOrg/morpheo-compute/"))
 	@# TODO: $(if $(-z $(OUTPUT)); @echo "Great Success",@echo "\n***EXTERNAL PACKAGES***\n"$(OUTPUT))
 
-%
+%/build/target/clean:
+	@echo "Removing $(subst /build/target,,$(@)

@@ -70,4 +70,6 @@ clean: docker-clean bin-clean vendor-clean
 	@mkdir -p $(@D)
 	@CGO_ENABLED=1 GOOS=linux go build -a --installsuffix cgo -o $@ ./$(dir $<)
 	@# TODO: $(eval OUTPUT = $(shell go build -v -o $@ ./$(subst /build/target,,$(@)) 2>&1 | grep -v "github.com/MorpheoOrg/morpheo-compute/"))
-	@# TODO: $(if $(-z $(OUTPUT)); @echo 
+	@# TODO: $(if $(-z $(OUTPUT)); @echo "Great Success",@echo "\n***EXTERNAL PACKAGES***\n"$(OUTPUT))
+
+%

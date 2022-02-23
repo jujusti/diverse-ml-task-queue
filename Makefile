@@ -77,4 +77,8 @@ clean: docker-clean bin-clean vendor-clean
 	rm -f $(@D)
 
 # 2. Vendoring
-vendor: G
+vendor: Gopkg.toml
+	@echo "Pulling dependencies with dep..."
+	dep ensure
+
+#

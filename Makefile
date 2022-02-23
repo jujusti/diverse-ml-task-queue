@@ -73,4 +73,8 @@ clean: docker-clean bin-clean vendor-clean
 	@# TODO: $(if $(-z $(OUTPUT)); @echo "Great Success",@echo "\n***EXTERNAL PACKAGES***\n"$(OUTPUT))
 
 %/build/target/clean:
-	@echo "Removing $(subst /build/target,,$(@)
+	@echo "Removing $(subst /build/target,,$(@)) binary..."
+	rm -f $(@D)
+
+# 2. Vendoring
+vendor: G

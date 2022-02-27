@@ -84,4 +84,6 @@ vendor: Gopkg.toml
 # build vendor in a container
 vendor-docker:
 	@echo "Pulling dependencies with dep... in a container"
-	rm -
+	rm -rf ./vendor
+	mkdir ./vendor
+	$(DEP_CONTAINER) bash -c 

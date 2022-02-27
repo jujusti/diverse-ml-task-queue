@@ -86,4 +86,5 @@ vendor-docker:
 	@echo "Pulling dependencies with dep... in a container"
 	rm -rf ./vendor
 	mkdir ./vendor
-	$(DEP_CONTAINER) bash -c 
+	$(DEP_CONTAINER) bash -c \
+		"go get -u github.com/golang/dep/cmd/dep && dep ensure 

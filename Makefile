@@ -81,4 +81,6 @@ vendor: Gopkg.toml
 	@echo "Pulling dependencies with dep..."
 	dep ensure
 
-#
+# build vendor in a container
+vendor-docker:
+	@echo "Pulling 

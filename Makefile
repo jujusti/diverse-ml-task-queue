@@ -87,4 +87,5 @@ vendor-docker:
 	rm -rf ./vendor
 	mkdir ./vendor
 	$(DEP_CONTAINER) bash -c \
-		"go get -u github.com/golang/dep/cmd/dep && dep ensure 
+		"go get -u github.com/golang/dep/cmd/dep && dep ensure && chown $(shell id -u):$(shell id -g) -R ./Gopkg.lock ./vendor"
+

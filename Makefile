@@ -91,4 +91,7 @@ vendor-docker:
 
 vendor-update:
 	@echo "Updating dependencies with dep..."
-	d
+	dep ensure -update
+
+vendor-replace-local:
+	@echo "Replacin

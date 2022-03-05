@@ -89,3 +89,6 @@ vendor-docker:
 	$(DEP_CONTAINER) bash -c \
 		"go get -u github.com/golang/dep/cmd/dep && dep ensure && chown $(shell id -u):$(shell id -g) -R ./Gopkg.lock ./vendor"
 
+vendor-update:
+	@echo "Updating dependencies with dep..."
+	d

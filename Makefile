@@ -94,4 +94,5 @@ vendor-update:
 	dep ensure -update
 
 vendor-replace-local:
-	@echo "Replacin
+	@echo "Replacing vendor/github.com/MorpheoOrg by local repository..."
+	@rm -rf ./vendor/github.com

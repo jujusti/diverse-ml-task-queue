@@ -101,4 +101,8 @@ vendor-replace-local:
 	@rm -rf ./vendor/github.com/MorpheoOrg/morpheo-go-packages/vendor
 
 # 3. Testing
-tests: vendor-replace-lo
+tests: vendor-replace-local
+	go test ./worker
+
+%-tests: vendor-replace-local
+	go test

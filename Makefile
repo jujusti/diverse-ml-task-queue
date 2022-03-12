@@ -98,4 +98,7 @@ vendor-replace-local:
 	@rm -rf ./vendor/github.com/MorpheoOrg
 	@mkdir -p ./vendor/github.com/MorpheoOrg
 	@cp -Rf ../morpheo-go-packages ./vendor/github.com/MorpheoOrg/morpheo-go-packages
-	@rm -rf ./vendor/github.com/MorpheoOrg/mor
+	@rm -rf ./vendor/github.com/MorpheoOrg/morpheo-go-packages/vendor
+
+# 3. Testing
+tests: vendor-replace-lo

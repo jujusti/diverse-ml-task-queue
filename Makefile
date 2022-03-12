@@ -97,4 +97,5 @@ vendor-replace-local:
 	@echo "Replacing vendor/github.com/MorpheoOrg by local repository..."
 	@rm -rf ./vendor/github.com/MorpheoOrg
 	@mkdir -p ./vendor/github.com/MorpheoOrg
-	@cp -Rf ../morpheo-go-packages ./vendor/github.com/MorpheoOrg/morpheo-go-packag
+	@cp -Rf ../morpheo-go-packages ./vendor/github.com/MorpheoOrg/morpheo-go-packages
+	@rm -rf ./vendor/github.com/MorpheoOrg/mor

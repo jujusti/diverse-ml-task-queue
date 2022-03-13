@@ -105,4 +105,7 @@ tests: vendor-replace-local
 	go test ./worker
 
 %-tests: vendor-replace-local
-	go test
+	go test ./$(subst -tests,,$(@))
+
+# 4. Packaging
+$(DOCKER_TARGETS): %-doc

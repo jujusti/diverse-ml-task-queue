@@ -108,4 +108,5 @@ tests: vendor-replace-local
 	go test ./$(subst -tests,,$(@))
 
 # 4. Packaging
-$(DOCKER_TARGETS): %-doc
+$(DOCKER_TARGETS): %-docker: %/build/target
+	@echo "Building the $(DOCKER

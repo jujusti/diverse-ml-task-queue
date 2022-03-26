@@ -110,4 +110,6 @@ tests: vendor-replace-local
 # 4. Packaging
 $(DOCKER_TARGETS): %-docker: %/build/target
 	@echo "Building the $(DOCKER_REPO)/compute-$(subst -docker,,$(@)):$(DOCKER_TAG) Docker image"
-	docker build -t $(DOCKER_REPO)/compute-$(sub
+	docker build -t $(DOCKER_REPO)/compute-$(subst -docker,,$(@)):$(DOCKER_TAG) \
+	  ./$(subst -docker,,$(@))
+

@@ -115,4 +115,5 @@ $(DOCKER_TARGETS): %-docker: %/build/target
 
 $(DOCKER_CLEAN_TARGETS):
 	@echo "Deleting the $(DOCKER_REPO)/compute-$(subst -docker,,$(@)):$(DOCKER_TAG) Docker image"
-	docker rmi $(DOCKER_REPO)/compute-$(subst -docker-clean,,
+	docker rmi $(DOCKER_REPO)/compute-$(subst -docker-clean,,$(@)):$(DOCKER_TAG) || \
+		echo "No $(DOCKER_REPO)/compute-$(subs

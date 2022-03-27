@@ -114,4 +114,4 @@ $(DOCKER_TARGETS): %-docker: %/build/target
 	  ./$(subst -docker,,$(@))
 
 $(DOCKER_CLEAN_TARGETS):
-	@echo "Deleting the $(DOCKER_REPO)/compute
+	@echo "Deleting the $(DOCKER_REPO)/compute-$(subst -docker,,$(@)):$(DOCKER_TAG) Docker im

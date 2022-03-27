@@ -113,3 +113,5 @@ $(DOCKER_TARGETS): %-docker: %/build/target
 	docker build -t $(DOCKER_REPO)/compute-$(subst -docker,,$(@)):$(DOCKER_TAG) \
 	  ./$(subst -docker,,$(@))
 
+$(DOCKER_CLEAN_TARGETS):
+	@echo "Deleting the $(DOCKER_REPO)/compute

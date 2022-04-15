@@ -11,4 +11,5 @@ as well.
 API Spec
 --------
 
-The API is dead 
+The API is dead simple. It consists in 4 routes, two of them being completely
+trivi

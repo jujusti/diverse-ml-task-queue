@@ -12,4 +12,6 @@ API Spec
 --------
 
 The API is dead simple. It consists in 4 routes, two of them being completely
-trivi
+trivial:
+ * `GET /`: lists all the routes
+ * `GET /health`: service live

@@ -14,4 +14,6 @@ API Spec
 The API is dead simple. It consists in 4 routes, two of them being completely
 trivial:
  * `GET /`: lists all the routes
- * `GET /health`: service live
+ * `GET /health`: service liveness probe
+ * `POST /pred`: post a preduplet to this route
+ * `POST 

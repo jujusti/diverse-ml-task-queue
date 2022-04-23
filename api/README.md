@@ -16,4 +16,6 @@ trivial:
  * `GET /`: lists all the routes
  * `GET /health`: service liveness probe
  * `POST /pred`: post a preduplet to this route
- * `POST 
+ * `POST /learn`: post a learnuplet to this route
+
+The API expects the pred/le

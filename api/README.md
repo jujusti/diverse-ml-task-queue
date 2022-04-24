@@ -18,4 +18,5 @@ trivial:
  * `POST /pred`: post a preduplet to this route
  * `POST /learn`: post a learnuplet to this route
 
-The API expects the pred/le
+The API expects the pred/learn uplets to be posted as JSON strings. Their
+structu

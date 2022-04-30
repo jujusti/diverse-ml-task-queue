@@ -19,4 +19,4 @@ trivial:
  * `POST /learn`: post a learnuplet to this route
 
 The API expects the pred/learn uplets to be posted as JSON strings. Their
-structu
+structure is described [here](https://morpheoorg.github.io/morpheo

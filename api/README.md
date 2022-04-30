@@ -22,3 +22,6 @@ The API expects the pred/learn uplets to be posted as JSON strings. Their
 structure is described [here](https://morpheoorg.github.io/morpheo-orchestrator/modules/collections.html).
 
 Key features
+------------
+
+* **Cloud Native**: the API is stateless and horizontaly 

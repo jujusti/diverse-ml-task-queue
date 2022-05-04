@@ -25,4 +25,5 @@ Key features
 ------------
 
 * **Cloud Native**: the API is stateless and horizontaly scalable. The chosen
-  broker for now is NSQ, which - stat
+  broker for now is NSQ, which - stateful though it may be - can easily be
+  scaled hori

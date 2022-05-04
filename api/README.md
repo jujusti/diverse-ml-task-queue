@@ -24,4 +24,5 @@ structure is described [here](https://morpheoorg.github.io/morpheo-orchestrator/
 Key features
 ------------
 
-* **Cloud Native**: the API is stateless and horizontaly 
+* **Cloud Native**: the API is stateless and horizontaly scalable. The chosen
+  broker for now is NSQ, which - stat

@@ -27,4 +27,7 @@ Key features
 * **Cloud Native**: the API is stateless and horizontaly scalable. The chosen
   broker for now is NSQ, which - stateful though it may be - can easily be
   scaled horizontally.
-* **Simple & Low Level**: written in Gola
+* **Simple & Low Level**: written in Golang, simple, and intented to stay so :)
+
+CLI Arguments
+-------

@@ -30,4 +30,10 @@ Key features
 * **Simple & Low Level**: written in Golang, simple, and intented to stay so :)
 
 CLI Arguments
--------
+-------------
+
+```
+Usage of ./target/compute-api:
+
+  -broker string
+    	B

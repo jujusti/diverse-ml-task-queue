@@ -36,4 +36,4 @@ CLI Arguments
 Usage of ./target/compute-api:
 
   -broker string
-    	B
+    	Broker type to use (only 'nsq' available for now) (d

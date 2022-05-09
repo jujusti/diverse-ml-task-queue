@@ -36,4 +36,6 @@ CLI Arguments
 Usage of ./target/compute-api:
 
   -broker string
-    	Broker type to use (only 'nsq' available for now) (d
+    	Broker type to use (only 'nsq' available for now) (default "nsq")
+  -broker-host string
+    	The address of the 

@@ -38,4 +38,6 @@ Usage of ./target/compute-api:
   -broker string
     	Broker type to use (only 'nsq' available for now) (default "nsq")
   -broker-host string
-    	The address of the 
+    	The address of the NSQ Broker to talk to (default "nsqd")
+  -broker-port int
+   

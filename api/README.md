@@ -40,4 +40,4 @@ Usage of ./target/compute-api:
   -broker-host string
     	The address of the NSQ Broker to talk to (default "nsqd")
   -broker-port int
-   
+    	The port of the NSQ Broker to talk to (default 4160)

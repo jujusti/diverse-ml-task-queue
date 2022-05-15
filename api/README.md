@@ -46,4 +46,6 @@ Usage of ./target/compute-api:
   -host string
     	The hostname our server will be listening on (default "0.0.0.0")
   -key string
-    	The TLS key used to encrypt connection (leave
+    	The TLS key used to encrypt connection (leave blank for no TLS)
+  -orchestrator value
+    	List of en

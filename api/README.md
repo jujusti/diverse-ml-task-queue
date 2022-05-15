@@ -41,3 +41,5 @@ Usage of ./target/compute-api:
     	The address of the NSQ Broker to talk to (default "nsqd")
   -broker-port int
     	The port of the NSQ Broker to talk to (default 4160)
+  -cert string
+    	The TLS certs to serve to clients (leav

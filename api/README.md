@@ -44,4 +44,5 @@ Usage of ./target/compute-api:
   -cert string
     	The TLS certs to serve to clients (leave blank for no TLS)
   -host string
-    	The hostname our server will be 
+    	The hostname our server will be listening on (default "0.0.0.0")
+  -key string

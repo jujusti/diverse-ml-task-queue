@@ -48,4 +48,4 @@ Usage of ./target/compute-api:
   -key string
     	The TLS key used to encrypt connection (leave blank for no TLS)
   -orchestrator value
-    	List of en
+    	List of endpoints (scheme and port included) for the orchestrators we

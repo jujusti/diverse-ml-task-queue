@@ -48,4 +48,6 @@ Usage of ./target/compute-api:
   -key string
     	The TLS key used to encrypt connection (leave blank for no TLS)
   -orchestrator value
-    	List of endpoints (scheme and port included) for the orchestrators we
+    	List of endpoints (scheme and port included) for the orchestrators we want to bind to.
+  -port int
+    	The port our comput

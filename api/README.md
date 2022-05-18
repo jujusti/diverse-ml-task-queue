@@ -50,4 +50,5 @@ Usage of ./target/compute-api:
   -orchestrator value
     	List of endpoints (scheme and port included) for the orchestrators we want to bind to.
   -port int
-    	The port our comput
+    	The port our compute API will be listening on (default 8000)
+  -storage valu

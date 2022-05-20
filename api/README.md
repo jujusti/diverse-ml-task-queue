@@ -51,4 +51,5 @@ Usage of ./target/compute-api:
     	List of endpoints (scheme and port included) for the orchestrators we want to bind to.
   -port int
     	The port our compute API will be listening on (default 8000)
-  -storage valu
+  -storage value
+    	List of endpoints (scheme and port includ

@@ -58,4 +58,4 @@ Usage of ./target/compute-api:
 Maintainers
 -----------
 * Étienne Lafarge <etienne@rythm.co>
-* Max-Pol Le Brun <maxpol
+* Max-Pol Le Brun <maxpol _at_ morpheo.co>

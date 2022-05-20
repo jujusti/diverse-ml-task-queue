@@ -52,4 +52,8 @@ Usage of ./target/compute-api:
   -port int
     	The port our compute API will be listening on (default 8000)
   -storage value
-    	List of endpoints (scheme and port includ
+    	List of endpoints (scheme and port included) for the storage nodes to bind to.
+```
+
+Maintainers
+----------

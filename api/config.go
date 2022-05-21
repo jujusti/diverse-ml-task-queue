@@ -3,4 +3,7 @@
  *
  * contact@morpheo.co
  *
- * This software is part of the Morpheo proj
+ * This software is part of the Morpheo project, an open-source machine
+ * learning platform.
+ *
+ * This so

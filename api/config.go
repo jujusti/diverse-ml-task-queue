@@ -6,4 +6,4 @@
  * This software is part of the Morpheo project, an open-source machine
  * learning platform.
  *
- * This so
+ * This software is governed by the CeCILL license, compatible 

@@ -12,4 +12,4 @@
  * under the terms of the CeCILL license as circulated by CEA, CNRS and
  * INRIA at the following URL "http://www.cecill.info".
  *
- * As a counterp
+ * As a counterpart to the access to the source code and  rights to 

@@ -42,4 +42,4 @@ import (
 	"github.com/MorpheoOrg/morpheo-go-packages/common"
 )
 
-// ProducerConfig Comput
+// ProducerConfig Compute API configuration, subject to dynamic changes for t

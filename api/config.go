@@ -43,4 +43,5 @@ import (
 )
 
 // ProducerConfig Compute API configuration, subject to dynamic changes for the addresses of
-// storage & orchestrator endpoints, and any RESTF
+// storage & orchestrator endpoints, and any RESTFul HTTP API added in the future.
+type ProducerConfig str

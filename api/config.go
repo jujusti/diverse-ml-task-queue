@@ -42,4 +42,5 @@ import (
 	"github.com/MorpheoOrg/morpheo-go-packages/common"
 )
 
-// ProducerConfig Compute API configuration, subject to dynamic changes for t
+// ProducerConfig Compute API configuration, subject to dynamic changes for the addresses of
+// storage & orchestrator endpoints, and any RESTF

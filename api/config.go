@@ -47,4 +47,6 @@ import (
 type ProducerConfig struct {
 	Hostname             string
 	Port                 int
-	Oches
+	OchestratorEndpoints []string
+	StorageEndpoints     []string
+	Broker       

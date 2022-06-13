@@ -51,4 +51,6 @@ type ProducerConfig struct {
 	StorageEndpoints     []string
 	Broker               string
 	BrokerHost           string
-	BrokerPort   
+	BrokerPort           int
+	CertFile             string
+	KeyFile      

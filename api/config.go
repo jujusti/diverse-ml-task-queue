@@ -49,4 +49,6 @@ type ProducerConfig struct {
 	Port                 int
 	OchestratorEndpoints []string
 	StorageEndpoints     []string
-	Broker       
+	Broker               string
+	BrokerHost           string
+	BrokerPort   

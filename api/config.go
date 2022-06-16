@@ -53,4 +53,9 @@ type ProducerConfig struct {
 	BrokerHost           string
 	BrokerPort           int
 	CertFile             string
-	KeyFile      
+	KeyFile              string
+
+	lock sync.Mutex
+}
+
+// TLSOn returns true if TLS

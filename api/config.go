@@ -58,4 +58,5 @@ type ProducerConfig struct {
 	lock sync.Mutex
 }
 
-// TLSOn returns true if TLS
+// TLSOn returns true if TLS credentials have been provided
+func (c *ProducerConfig) TLSOn()

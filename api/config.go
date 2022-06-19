@@ -59,4 +59,8 @@ type ProducerConfig struct {
 }
 
 // TLSOn returns true if TLS credentials have been provided
-func (c *ProducerConfig) TLSOn()
+func (c *ProducerConfig) TLSOn() bool {
+	return c.CertFile != "" && c.KeyFile != ""
+}
+
+// Lock locks the con

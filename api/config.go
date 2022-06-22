@@ -63,4 +63,6 @@ func (c *ProducerConfig) TLSOn() bool {
 	return c.CertFile != "" && c.KeyFile != ""
 }
 
-// Lock locks the con
+// Lock locks the config store
+func (c *ProducerConfig) Lock() {
+	c.lock.Lo

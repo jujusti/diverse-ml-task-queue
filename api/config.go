@@ -65,4 +65,7 @@ func (c *ProducerConfig) TLSOn() bool {
 
 // Lock locks the config store
 func (c *ProducerConfig) Lock() {
-	c.lock.Lo
+	c.lock.Lock()
+}
+
+// Unlock unlocks the config store to be w

@@ -73,4 +73,4 @@ func (c *ProducerConfig) Unlock() {
 	c.lock.Unlock()
 }
 
-// NewProducerConfig computes the co
+// NewProducerConfig computes the configuration object. Note that a pointer is return

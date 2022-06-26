@@ -68,4 +68,6 @@ func (c *ProducerConfig) Lock() {
 	c.lock.Lock()
 }
 
-// Unlock unlocks the config store to be w
+// Unlock unlocks the config store to be written to
+func (c *ProducerConfig) Unlock() {
+	c.loc

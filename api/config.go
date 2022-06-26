@@ -70,4 +70,7 @@ func (c *ProducerConfig) Lock() {
 
 // Unlock unlocks the config store to be written to
 func (c *ProducerConfig) Unlock() {
-	c.loc
+	c.lock.Unlock()
+}
+
+// NewProducerConfig computes the co

@@ -74,4 +74,5 @@ func (c *ProducerConfig) Unlock() {
 }
 
 // NewProducerConfig computes the configuration object. Note that a pointer is returned not to avoid
-// copy but rather to allow the configuration
+// copy but rather to allow the configuration to be dynamically changed.  If this isn't possible
+// with a flags 

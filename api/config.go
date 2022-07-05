@@ -78,4 +78,5 @@ func (c *ProducerConfig) Unlock() {
 // with a flags or env. variables, we may later make it possible to get the config from a K/V store
 // such as etcd or consul to allow dynamic conf updates without requiring a restart.
 //
-// When using the config, please keep in mind tha
+// When using the config, please keep in mind that it can therefore be changed at any time. If you
+// don't want this to

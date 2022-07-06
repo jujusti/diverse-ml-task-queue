@@ -80,4 +80,7 @@ func (c *ProducerConfig) Unlock() {
 //
 // When using the config, please keep in mind that it can therefore be changed at any time. If you
 // don't want this to happen, please use the object's Lock()/Unlock() features.
-func NewProducerConfig() (conf *ProducerConf
+func NewProducerConfig() (conf *ProducerConfig) {
+	var (
+		hostname      string
+		port          in

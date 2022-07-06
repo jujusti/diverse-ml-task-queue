@@ -83,4 +83,6 @@ func (c *ProducerConfig) Unlock() {
 func NewProducerConfig() (conf *ProducerConfig) {
 	var (
 		hostname      string
-		port          in
+		port          int
+		orchestrators common.MultiStringFlag
+		storages      common.MultiStrin

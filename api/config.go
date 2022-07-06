@@ -85,4 +85,7 @@ func NewProducerConfig() (conf *ProducerConfig) {
 		hostname      string
 		port          int
 		orchestrators common.MultiStringFlag
-		storages      common.MultiStrin
+		storages      common.MultiStringFlag
+		broker        string
+		brokerHost    string
+		brokerPort    

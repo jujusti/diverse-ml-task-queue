@@ -79,4 +79,5 @@ func (c *ProducerConfig) Unlock() {
 // such as etcd or consul to allow dynamic conf updates without requiring a restart.
 //
 // When using the config, please keep in mind that it can therefore be changed at any time. If you
-// don't want this to happen, please use the object's Lock()/Unlock() feat
+// don't want this to happen, please use the object's Lock()/Unlock() features.
+func NewProducerConfig() (conf *ProducerConf

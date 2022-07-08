@@ -88,4 +88,9 @@ func NewProducerConfig() (conf *ProducerConfig) {
 		storages      common.MultiStringFlag
 		broker        string
 		brokerHost    string
-		brokerPort    
+		brokerPort    int
+		certFile      string
+		keyFile       string
+	)
+
+	

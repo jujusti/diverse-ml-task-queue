@@ -93,4 +93,5 @@ func NewProducerConfig() (conf *ProducerConfig) {
 		keyFile       string
 	)
 
-	
+	// CLI Flags
+	flag.StringVar(&hostname, "host",

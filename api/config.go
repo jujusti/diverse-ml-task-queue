@@ -95,4 +95,4 @@ func NewProducerConfig() (conf *ProducerConfig) {
 
 	// CLI Flags
 	flag.StringVar(&hostname, "host", "0.0.0.0", "The hostname our server will be listening on")
-	fl
+	flag.IntVar(&port, "port", 8000, "The port our compute API will be li

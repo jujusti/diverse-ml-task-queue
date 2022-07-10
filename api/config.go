@@ -94,4 +94,5 @@ func NewProducerConfig() (conf *ProducerConfig) {
 	)
 
 	// CLI Flags
-	flag.StringVar(&hostname, "host",
+	flag.StringVar(&hostname, "host", "0.0.0.0", "The hostname our server will be listening on")
+	fl

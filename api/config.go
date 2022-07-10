@@ -95,4 +95,5 @@ func NewProducerConfig() (conf *ProducerConfig) {
 
 	// CLI Flags
 	flag.StringVar(&hostname, "host", "0.0.0.0", "The hostname our server will be listening on")
-	flag.IntVar(&port, "port", 8000, "The port our compute API will be li
+	flag.IntVar(&port, "port", 8000, "The port our compute API will be listening on")
+	flag.Var(&orchestrators, "orchestrator", "Li

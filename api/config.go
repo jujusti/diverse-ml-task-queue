@@ -97,4 +97,4 @@ func NewProducerConfig() (conf *ProducerConfig) {
 	flag.StringVar(&hostname, "host", "0.0.0.0", "The hostname our server will be listening on")
 	flag.IntVar(&port, "port", 8000, "The port our compute API will be listening on")
 	flag.Var(&orchestrators, "orchestrator", "List of endpoints (scheme and port included) for the orchestrators we want to bind to.")
-	flag.Var(&storages, "storage", "List of
+	flag.Var(&storages, "storage", "List of endpoints (scheme and port included) for the storage nodes 

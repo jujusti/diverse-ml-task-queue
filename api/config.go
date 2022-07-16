@@ -98,4 +98,5 @@ func NewProducerConfig() (conf *ProducerConfig) {
 	flag.IntVar(&port, "port", 8000, "The port our compute API will be listening on")
 	flag.Var(&orchestrators, "orchestrator", "List of endpoints (scheme and port included) for the orchestrators we want to bind to.")
 	flag.Var(&storages, "storage", "List of endpoints (scheme and port included) for the storage nodes to bind to.")
-	flag.StringVar(&broker, "broker", "mock", "Broker type to use (only 'nsq' and 'mock' available for now
+	flag.StringVar(&broker, "broker", "mock", "Broker type to use (only 'nsq' and 'mock' available for now)")
+	flag.StringVar(&brokerHost, "broker-host", "nsqd", "The address 

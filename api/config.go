@@ -100,4 +100,5 @@ func NewProducerConfig() (conf *ProducerConfig) {
 	flag.Var(&storages, "storage", "List of endpoints (scheme and port included) for the storage nodes to bind to.")
 	flag.StringVar(&broker, "broker", "mock", "Broker type to use (only 'nsq' and 'mock' available for now)")
 	flag.StringVar(&brokerHost, "broker-host", "nsqd", "The address of the NSQ Broker to talk to")
-	flag.IntVar(&brokerPort, "broker-port"
+	flag.IntVar(&brokerPort, "broker-port", 4160, "The port of the NSQ Broker to talk to")
+	flag.Str

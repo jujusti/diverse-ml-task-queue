@@ -101,4 +101,4 @@ func NewProducerConfig() (conf *ProducerConfig) {
 	flag.StringVar(&broker, "broker", "mock", "Broker type to use (only 'nsq' and 'mock' available for now)")
 	flag.StringVar(&brokerHost, "broker-host", "nsqd", "The address of the NSQ Broker to talk to")
 	flag.IntVar(&brokerPort, "broker-port", 4160, "The port of the NSQ Broker to talk to")
-	flag.Str
+	flag.StringVar(&certFile, "cert", "", "The TLS certs to serve to cli

@@ -105,4 +105,6 @@ func NewProducerConfig() (conf *ProducerConfig) {
 	flag.StringVar(&keyFile, "key", "", "The TLS key used to encrypt connection (leave blank for no TLS)")
 	flag.Parse()
 
-	// Apply custom defaults on list flags if 
+	// Apply custom defaults on list flags if necessary
+	if len(orchestrators) == 0 {
+		orchestrators = a

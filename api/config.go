@@ -110,4 +110,5 @@ func NewProducerConfig() (conf *ProducerConfig) {
 		orchestrators = append(orchestrators, "http://orchestrator")
 	}
 
-	if le
+	if len(storages) == 0 {
+		storages = append(storages, "http://stora

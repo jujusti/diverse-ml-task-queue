@@ -111,4 +111,8 @@ func NewProducerConfig() (conf *ProducerConfig) {
 	}
 
 	if len(storages) == 0 {
-		storages = append(storages, "http://stora
+		storages = append(storages, "http://storages")
+	}
+
+	// Let's create the config structure
+	conf = &Produce

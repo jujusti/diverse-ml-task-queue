@@ -115,4 +115,6 @@ func NewProducerConfig() (conf *ProducerConfig) {
 	}
 
 	// Let's create the config structure
-	conf = &Produce
+	conf = &ProducerConfig{
+		Hostname:             hostname,
+		Port:                

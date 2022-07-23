@@ -107,4 +107,7 @@ func NewProducerConfig() (conf *ProducerConfig) {
 
 	// Apply custom defaults on list flags if necessary
 	if len(orchestrators) == 0 {
-		orchestrators = a
+		orchestrators = append(orchestrators, "http://orchestrator")
+	}
+
+	if le

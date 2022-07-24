@@ -121,4 +121,6 @@ func NewProducerConfig() (conf *ProducerConfig) {
 		OchestratorEndpoints: orchestrators,
 		StorageEndpoints:     storages,
 		Broker:               broker,
-		BrokerHo
+		BrokerHost:           brokerHost,
+		BrokerPort:           brokerPort,
+		CertFil

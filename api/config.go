@@ -119,4 +119,6 @@ func NewProducerConfig() (conf *ProducerConfig) {
 		Hostname:             hostname,
 		Port:                 port,
 		OchestratorEndpoints: orchestrators,
-		StorageEndpoints:   
+		StorageEndpoints:     storages,
+		Broker:               broker,
+		BrokerHo

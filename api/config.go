@@ -123,4 +123,5 @@ func NewProducerConfig() (conf *ProducerConfig) {
 		Broker:               broker,
 		BrokerHost:           brokerHost,
 		BrokerPort:           brokerPort,
-		CertFil
+		CertFile:             certFile,
+		KeyFile:              keyFil

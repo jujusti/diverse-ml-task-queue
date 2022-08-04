@@ -13,4 +13,5 @@
  * INRIA at the following URL "http://www.cecill.info".
  *
  * As a counterpart to the access to the source code and  rights to copy,
+ * modify and redistribute granted by the license, users are provided only
  * 

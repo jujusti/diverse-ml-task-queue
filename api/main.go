@@ -20,4 +20,4 @@
  *
  * In this respect, the user's attention is drawn to the risks associated
  * with loading,  using,  modifying and/or developing or reproducing the
- * softw
+ * software by the user in light of its specific status of free software

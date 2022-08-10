@@ -19,4 +19,5 @@
  * liability.
  *
  * In this respect, the user's attention is drawn to the risks associated
- * with loading,  using,  mo
+ * with loading,  using,  modifying and/or developing or reproducing the
+ * softw

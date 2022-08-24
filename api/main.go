@@ -50,4 +50,8 @@ import (
 	"github.com/MorpheoOrg/morpheo-go-packages/common"
 )
 
-// TODO: write tests for the 
+// TODO: write tests for the two main views
+
+// Available HTTP Routes
+const (
+	Ro

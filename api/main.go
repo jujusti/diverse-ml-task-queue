@@ -54,4 +54,8 @@ import (
 
 // Available HTTP Routes
 const (
-	Ro
+	RootRoute   = "/"
+	HealthRoute = "/health"
+)
+
+type a

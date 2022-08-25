@@ -58,4 +58,6 @@ const (
 	HealthRoute = "/health"
 )
 
-type a
+type apiServer struct {
+	conf     *ProducerConfig
+	producer 

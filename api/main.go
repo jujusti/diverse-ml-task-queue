@@ -60,4 +60,8 @@ const (
 
 type apiServer struct {
 	conf     *ProducerConfig
-	producer 
+	producer common.Producer
+	peer     client.Peer
+}
+
+func (s *apiServer) conf

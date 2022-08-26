@@ -64,4 +64,5 @@ type apiServer struct {
 	peer     client.Peer
 }
 
-func (s *apiServer) conf
+func (s *apiServer) configureRoutes(app *iris.Framework) {
+	app.Get(RootRoute, s.

@@ -68,4 +68,7 @@ func (s *apiServer) configureRoutes(app *iris.Framework) {
 	app.Get(RootRoute, s.index)
 	app.Get(HealthRoute, s.health)
 	app.Get("/query", s.query)   // For test purposes
-	app.Get("/invoke", s.invoke) // For t
+	app.Get("/invoke", s.invoke) // For test purposes
+}
+
+// SetIrisApp sets the base for the I

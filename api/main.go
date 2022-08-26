@@ -67,4 +67,5 @@ type apiServer struct {
 func (s *apiServer) configureRoutes(app *iris.Framework) {
 	app.Get(RootRoute, s.index)
 	app.Get(HealthRoute, s.health)
-	app.Get("/query", s.qu
+	app.Get("/query", s.query)   // For test purposes
+	app.Get("/invoke", s.invoke) // For t

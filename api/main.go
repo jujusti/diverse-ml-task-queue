@@ -71,4 +71,5 @@ func (s *apiServer) configureRoutes(app *iris.Framework) {
 	app.Get("/invoke", s.invoke) // For test purposes
 }
 
-// SetIrisApp sets the base for the I
+// SetIrisApp sets the base for the Iris App
+func (s *apiServer) SetIrisApp() *iris.Fr

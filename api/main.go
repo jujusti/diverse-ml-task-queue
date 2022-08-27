@@ -72,4 +72,7 @@ func (s *apiServer) configureRoutes(app *iris.Framework) {
 }
 
 // SetIrisApp sets the base for the Iris App
-func (s *apiServer) SetIrisApp() *iris.Fr
+func (s *apiServer) SetIrisApp() *iris.Framework {
+	// Iris setup
+	app := iris.New()
+	app.Adapt(iris.DevLogg

@@ -75,4 +75,7 @@ func (s *apiServer) configureRoutes(app *iris.Framework) {
 func (s *apiServer) SetIrisApp() *iris.Framework {
 	// Iris setup
 	app := iris.New()
-	app.Adapt(iris.DevLogg
+	app.Adapt(iris.DevLogger())
+	app.Adapt(httprouter.New())
+
+	// Logging middleware confi

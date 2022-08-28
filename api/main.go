@@ -78,4 +78,6 @@ func (s *apiServer) SetIrisApp() *iris.Framework {
 	app.Adapt(iris.DevLogger())
 	app.Adapt(httprouter.New())
 
-	// Logging middleware confi
+	// Logging middleware configuration
+	customLogger := logger.New(logger.Config{
+		Sta

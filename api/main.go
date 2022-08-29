@@ -84,4 +84,8 @@ func (s *apiServer) SetIrisApp() *iris.Framework {
 		IP:     true,
 		Method: true,
 		Path:   true,
-	
+	})
+	app.Use(customLogger)
+
+	s.configureRoutes(app)
+	ret

@@ -80,4 +80,8 @@ func (s *apiServer) SetIrisApp() *iris.Framework {
 
 	// Logging middleware configuration
 	customLogger := logger.New(logger.Config{
-		Sta
+		Status: true,
+		IP:     true,
+		Method: true,
+		Path:   true,
+	

@@ -88,4 +88,9 @@ func (s *apiServer) SetIrisApp() *iris.Framework {
 	app.Use(customLogger)
 
 	s.configureRoutes(app)
-	ret
+	return app
+}
+
+func main() {
+	// App-specific config (parses CLI flags)
+	conf :=

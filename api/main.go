@@ -95,4 +95,5 @@ func main() {
 	// App-specific config (parses CLI flags)
 	conf := NewProducerConfig()
 
-	// Let's dependency inject t
+	// Let's dependency inject the producer for the chosen Broker
+	var producer common.Prod

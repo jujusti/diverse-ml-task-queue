@@ -93,4 +93,6 @@ func (s *apiServer) SetIrisApp() *iris.Framework {
 
 func main() {
 	// App-specific config (parses CLI flags)
-	conf :=
+	conf := NewProducerConfig()
+
+	// Let's dependency inject t

@@ -99,4 +99,5 @@ func main() {
 	var producer common.Producer
 	switch conf.Broker {
 	case common.BrokerNSQ:
-		var err e
+		var err error
+		producer, err = common.NewNSQProducer(conf.BrokerHost

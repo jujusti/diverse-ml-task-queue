@@ -100,4 +100,6 @@ func main() {
 	switch conf.Broker {
 	case common.BrokerNSQ:
 		var err error
-		producer, err = common.NewNSQProducer(conf.BrokerHost
+		producer, err = common.NewNSQProducer(conf.BrokerHost, conf.BrokerPort)
+		defer producer.Stop()
+		i

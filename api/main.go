@@ -96,4 +96,7 @@ func main() {
 	conf := NewProducerConfig()
 
 	// Let's dependency inject the producer for the chosen Broker
-	var producer common.Prod
+	var producer common.Producer
+	switch conf.Broker {
+	case common.BrokerNSQ:
+		var err e

@@ -105,4 +105,7 @@ func main() {
 		if err != nil {
 			log.Panicln(err)
 		}
-	case common.B
+	case common.BrokerMOCK:
+		producer = &common.ProducerMOCK{}
+	default:
+		log.Panicf("U

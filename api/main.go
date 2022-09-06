@@ -108,4 +108,4 @@ func main() {
 	case common.BrokerMOCK:
 		producer = &common.ProducerMOCK{}
 	default:
-		log.Panicf("U
+		log.Panicf("Unsupported broker (%s). Available brokers: 'nsq', 'mock'", conf.Br

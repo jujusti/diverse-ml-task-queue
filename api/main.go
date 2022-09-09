@@ -108,4 +108,7 @@ func main() {
 	case common.BrokerMOCK:
 		producer = &common.ProducerMOCK{}
 	default:
-		log.Panicf("Unsupported broker (%s). Available brokers: 'nsq', 'mock'", conf.Br
+		log.Panicf("Unsupported broker (%s). Available brokers: 'nsq', 'mock'", conf.Broker)
+	}
+
+	// Let's create our peer client to request the blockcha

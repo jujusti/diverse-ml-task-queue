@@ -111,4 +111,6 @@ func main() {
 		log.Panicf("Unsupported broker (%s). Available brokers: 'nsq', 'mock'", conf.Broker)
 	}
 
-	// Let's create our peer client to request the blockcha
+	// Let's create our peer client to request the blockchain
+	// TODO: WITH ADMIN/USER ID INSTEAD
+	peer, err := cli

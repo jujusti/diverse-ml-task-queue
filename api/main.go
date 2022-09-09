@@ -113,4 +113,7 @@ func main() {
 
 	// Let's create our peer client to request the blockchain
 	// TODO: WITH ADMIN/USER ID INSTEAD
-	peer, err := cli
+	peer, err := client.NewPeerAPI(
+		"secrets/config.yaml",
+		"Aphp",
+		"mychannel"

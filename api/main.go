@@ -124,4 +124,7 @@ func main() {
 	}
 
 	// Handlers configuration
-	api := &apiS
+	api := &apiServer{
+		conf:     conf,
+		producer: producer,
+		peer:     pe

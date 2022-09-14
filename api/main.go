@@ -120,4 +120,8 @@ func main() {
 		"mycc",
 	)
 	if err != nil {
-		log.Panicf("Error creating peer cl
+		log.Panicf("Error creating peer client: %s", err)
+	}
+
+	// Handlers configuration
+	api := &apiS

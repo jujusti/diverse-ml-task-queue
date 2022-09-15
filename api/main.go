@@ -132,4 +132,7 @@ func main() {
 
 	app := api.SetIrisApp()
 
-	go api.relayNewL
+	go api.relayNewLearnuplet()
+
+	// Main server loop
+	if conf.TLSOn(

@@ -127,4 +127,9 @@ func main() {
 	api := &apiServer{
 		conf:     conf,
 		producer: producer,
-		peer:     pe
+		peer:     peer,
+	}
+
+	app := api.SetIrisApp()
+
+	go api.relayNewL

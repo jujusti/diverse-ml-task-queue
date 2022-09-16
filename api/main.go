@@ -135,4 +135,5 @@ func main() {
 	go api.relayNewLearnuplet()
 
 	// Main server loop
-	if conf.TLSOn(
+	if conf.TLSOn() {
+		app.ListenTLS(fmt.Sprintf("%s:%d", conf.Hostname, conf

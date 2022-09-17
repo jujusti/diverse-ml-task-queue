@@ -136,4 +136,6 @@ func main() {
 
 	// Main server loop
 	if conf.TLSOn() {
-		app.ListenTLS(fmt.Sprintf("%s:%d", conf.Hostname, conf
+		app.ListenTLS(fmt.Sprintf("%s:%d", conf.Hostname, conf.Port), conf.CertFile, conf.KeyFile)
+	} else {
+		app.Listen(fmt.S

@@ -142,4 +142,6 @@ func main() {
 	}
 }
 
-func (s *apiServer)
+func (s *apiServer) index(c *iris.Context) {
+	// TODO: check broker connectivity here
+	c.J

@@ -144,4 +144,7 @@ func main() {
 
 func (s *apiServer) index(c *iris.Context) {
 	// TODO: check broker connectivity here
-	c.J
+	c.JSON(iris.StatusOK, []string{RootRoute, HealthRoute})
+}
+
+fu

@@ -138,4 +138,8 @@ func main() {
 	if conf.TLSOn() {
 		app.ListenTLS(fmt.Sprintf("%s:%d", conf.Hostname, conf.Port), conf.CertFile, conf.KeyFile)
 	} else {
-		app.Listen(fmt.S
+		app.Listen(fmt.Sprintf("%s:%d", conf.Hostname, conf.Port))
+	}
+}
+
+func (s *apiServer)

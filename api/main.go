@@ -151,4 +151,5 @@ func (s *apiServer) health(c *iris.Context) {
 	c.JSON(iris.StatusOK, map[string]string{"status": "ok"})
 }
 
-func (s *apiServer) 
+func (s *apiServer) postLearnuplet(learnuplet common.Learnuplet) error {
+	// Let's check for r

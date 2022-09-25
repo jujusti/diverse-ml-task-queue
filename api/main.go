@@ -152,4 +152,5 @@ func (s *apiServer) health(c *iris.Context) {
 }
 
 func (s *apiServer) postLearnuplet(learnuplet common.Learnuplet) error {
-	// Let's check for r
+	// Let's check for required arguments presence and validity
+	if err := learnuplet.Check();

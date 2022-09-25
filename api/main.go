@@ -147,4 +147,5 @@ func (s *apiServer) index(c *iris.Context) {
 	c.JSON(iris.StatusOK, []string{RootRoute, HealthRoute})
 }
 
-fu
+func (s *apiServer) health(c *iris.Context) {
+	c.JSON

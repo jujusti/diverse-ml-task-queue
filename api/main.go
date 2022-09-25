@@ -148,4 +148,7 @@ func (s *apiServer) index(c *iris.Context) {
 }
 
 func (s *apiServer) health(c *iris.Context) {
-	c.JSON
+	c.JSON(iris.StatusOK, map[string]string{"status": "ok"})
+}
+
+func (s *apiServer) 

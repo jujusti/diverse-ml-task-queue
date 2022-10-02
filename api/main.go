@@ -156,3 +156,5 @@ func (s *apiServer) postLearnuplet(learnuplet common.Learnuplet) error {
 	if err := learnuplet.Check(); err != nil {
 		return fmt.Errorf("[ERROR] Invalid learnuplet: %s", err)
 	}
+
+	// Let's put our Learnuplet in the right topic so tha

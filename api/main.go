@@ -157,4 +157,5 @@ func (s *apiServer) postLearnuplet(learnuplet common.Learnuplet) error {
 		return fmt.Errorf("[ERROR] Invalid learnuplet: %s", err)
 	}
 
-	// Let's put our Learnuplet in the right topic so tha
+	// Let's put our Learnuplet in the right topic so that it gets processed for real
+	taskBytes, err := json.Marshal(learnup

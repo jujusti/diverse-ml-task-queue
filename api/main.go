@@ -163,4 +163,5 @@ func (s *apiServer) postLearnuplet(learnuplet common.Learnuplet) error {
 		return fmt.Errorf("[ERROR] Failed to remarshal JSON learnuplet after validation: %s", err)
 	}
 
-	e
+	err = s.producer.Push(common.TrainTopic, taskBytes)
+	if e

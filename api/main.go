@@ -160,4 +160,7 @@ func (s *apiServer) postLearnuplet(learnuplet common.Learnuplet) error {
 	// Let's put our Learnuplet in the right topic so that it gets processed for real
 	taskBytes, err := json.Marshal(learnuplet)
 	if err != nil {
-		return fmt.Errorf("[ERROR] Faile
+		return fmt.Errorf("[ERROR] Failed to remarshal JSON learnuplet after validation: %s", err)
+	}
+
+	e

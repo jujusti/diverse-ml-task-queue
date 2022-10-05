@@ -164,4 +164,5 @@ func (s *apiServer) postLearnuplet(learnuplet common.Learnuplet) error {
 	}
 
 	err = s.producer.Push(common.TrainTopic, taskBytes)
-	if e
+	if err != nil {
+		return fmt.Errorf("[ERROR] Failed push learn-upl

@@ -170,4 +170,7 @@ func (s *apiServer) postLearnuplet(learnuplet common.Learnuplet) error {
 	return nil
 }
 
-func (s *apiS
+func (s *apiServer) postPreduplet(c *iris.Context) {
+	var predUplet common.Preduplet
+
+	// 

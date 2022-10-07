@@ -173,4 +173,5 @@ func (s *apiServer) postLearnuplet(learnuplet common.Learnuplet) error {
 func (s *apiServer) postPreduplet(c *iris.Context) {
 	var predUplet common.Preduplet
 
-	// 
+	// Unserializing the request body
+	if err := j

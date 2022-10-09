@@ -181,4 +181,5 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 		return
 	}
 
-	// Let's check for requir
+	// Let's check for required arguments presence and validity
+	if err := pred

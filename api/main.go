@@ -176,4 +176,5 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 	// Unserializing the request body
 	if err := json.NewDecoder(c.Request.Body).Decode(&predUplet); err != nil {
 		msg := fmt.Sprintf("Error decoding body to JSON: %s", err)
-		l
+		log.Printf("[INFO] %s", msg)
+		c.JSON(iris.StatusBadRequest, common

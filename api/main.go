@@ -183,4 +183,6 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 
 	// Let's check for required arguments presence and validity
 	if err := predUplet.Check(); err != nil {
-		msg := fmt.Sprintf("Invalid pred-u
+		msg := fmt.Sprintf("Invalid pred-uplet: %s", err)
+		log.Printf("[INFO] %s", msg)
+		

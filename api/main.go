@@ -185,4 +185,4 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 	if err := predUplet.Check(); err != nil {
 		msg := fmt.Sprintf("Invalid pred-uplet: %s", err)
 		log.Printf("[INFO] %s", msg)
-		
+		c.JSON(iris.StatusBadRequest, common.NewAPIError(msg))

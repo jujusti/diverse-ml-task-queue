@@ -189,4 +189,6 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 		return
 	}
 
-	taskBytes, err := json.Marshal(predUplet
+	taskBytes, err := json.Marshal(predUplet)
+	if err != nil {
+		msg := fmt.Sprintf("Failed to remarshal predupl

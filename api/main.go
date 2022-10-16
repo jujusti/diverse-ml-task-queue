@@ -191,4 +191,6 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 
 	taskBytes, err := json.Marshal(predUplet)
 	if err != nil {
-		msg := fmt.Sprintf("Failed to remarshal predupl
+		msg := fmt.Sprintf("Failed to remarshal preduplet to JSON: %s", err)
+		log.Printf("[ERROR] %s", msg)
+		c.JSON(iris.StatusIn

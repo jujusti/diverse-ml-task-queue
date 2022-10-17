@@ -196,4 +196,6 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 		c.JSON(iris.StatusInternalServerError, common.NewAPIError(msg))
 		return
 	}
-	err = s.pr
+	err = s.producer.Push(common.PredictTopic, taskBytes)
+	if err != nil {
+		msg := fmt

@@ -199,4 +199,5 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 	err = s.producer.Push(common.PredictTopic, taskBytes)
 	if err != nil {
 		msg := fmt.Sprintf("Failed to push preduplet task into broker: %s", err)
-		log.P
+		log.Printf("[ERROR] %s", msg)
+		c.JSON(iris.StatusInternalSer

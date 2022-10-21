@@ -204,4 +204,5 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 		return
 	}
 
-	// TODO: notify the orchestrator we're starting this learning process 
+	// TODO: notify the orchestrator we're starting this learning process (using the Go orchestrator
+	// API). We can either d

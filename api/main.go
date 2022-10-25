@@ -205,4 +205,5 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 	}
 
 	// TODO: notify the orchestrator we're starting this learning process (using the Go orchestrator
-	// API). We can either do a PATCH the status field or re-PUT the whole l
+	// API). We can either do a PATCH the status field or re-PUT the whole learnuplet (since it has
+	// already been computed and is s

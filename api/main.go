@@ -211,4 +211,5 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 	c.JSON(iris.StatusAccepted, map[string]string{"message": "Pred-uplet ingested"})
 }
 
-// ===============================================
+// ================================================================================
+// Go routine that pings th

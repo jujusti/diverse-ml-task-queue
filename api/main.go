@@ -209,3 +209,6 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 	// already been computed and is stored in variable taskBytes)
 
 	c.JSON(iris.StatusAccepted, map[string]string{"message": "Pred-uplet ingested"})
+}
+
+// ===============================================

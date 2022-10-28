@@ -208,4 +208,4 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 	// API). We can either do a PATCH the status field or re-PUT the whole learnuplet (since it has
 	// already been computed and is stored in variable taskBytes)
 
-	c.JSON(iris.StatusAccepted,
+	c.JSON(iris.StatusAccepted, map[string]string{"message": "Pred-uplet ingested"})

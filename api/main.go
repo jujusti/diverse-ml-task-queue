@@ -214,4 +214,4 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 // ================================================================================
 // Go routine that pings the blockchain
 // ================================================================================
-// Note t
+// Note that this might be changed after a while if a successfull e

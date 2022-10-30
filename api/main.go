@@ -218,4 +218,5 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 // can be easily plugged to the blockchain.
 // The code is not clean
 
-func (s *apiServer) relayNe
+func (s *apiServer) relayNewLearnuplet() {
+	// brokerLearnQueue represents the le

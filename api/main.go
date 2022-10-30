@@ -215,4 +215,7 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 // Go routine that pings the blockchain
 // ================================================================================
 // Note that this might be changed after a while if a successfull event listenner
-// can be easily plugged to the bloc
+// can be easily plugged to the blockchain.
+// The code is not clean
+
+func (s *apiServer) relayNe

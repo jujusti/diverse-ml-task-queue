@@ -219,4 +219,5 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 // The code is not clean
 
 func (s *apiServer) relayNewLearnuplet() {
-	// brokerLearnQueue represents the le
+	// brokerLearnQueue represents the learnuplet(s) that have been posted to the
+	// broker, but are still with a statu

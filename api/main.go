@@ -220,4 +220,5 @@ func (s *apiServer) postPreduplet(c *iris.Context) {
 
 func (s *apiServer) relayNewLearnuplet() {
 	// brokerLearnQueue represents the learnuplet(s) that have been posted to the
-	// broker, but are still with a statu
+	// broker, but are still with a status "todo".
+	// Without this poor little slice of string, each learnupl

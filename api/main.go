@@ -225,3 +225,7 @@ func (s *apiServer) relayNewLearnuplet() {
 	// with a status "todo" would be posted again every 5s... TOFIX this logic
 	var brokerLearnQueue []string
 
+	for {
+		time.Sleep(5 * time.Second)
+
+		// Retrieve Learnuplet

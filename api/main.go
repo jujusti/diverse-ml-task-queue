@@ -229,4 +229,5 @@ func (s *apiServer) relayNewLearnuplet() {
 		time.Sleep(5 * time.Second)
 
 		// Retrieve Learnuplets with status "todo" from peer
-		learnupletsBytes, err :
+		learnupletsBytes, err := s.peer.QueryStatusLearnuplet("todo")
+		if err != n

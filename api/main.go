@@ -236,4 +236,5 @@ func (s *apiServer) relayNewLearnuplet() {
 		}
 
 		// Unmarshal Learnuplets
-		v
+		var learnupletsChaincode []common.LearnupletChaincode
+		err 

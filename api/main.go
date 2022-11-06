@@ -230,4 +230,5 @@ func (s *apiServer) relayNewLearnuplet() {
 
 		// Retrieve Learnuplets with status "todo" from peer
 		learnupletsBytes, err := s.peer.QueryStatusLearnuplet("todo")
-		if err != n
+		if err != nil {
+			log.Printf("[ERROR] Failed to queryStatusLearnup

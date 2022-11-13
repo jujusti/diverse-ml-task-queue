@@ -239,4 +239,7 @@ func (s *apiServer) relayNewLearnuplet() {
 		var learnupletsChaincode []common.LearnupletChaincode
 		err = json.Unmarshal(learnupletsBytes, &learnupletsChaincode)
 		if err != nil {
-			log.Printf("[ERROR] Failed to Unmarshal 
+			log.Printf("[ERROR] Failed to Unmarshal learnuplets: %s", err)
+			continue
+		}
+		log.Printf("[INFO] %

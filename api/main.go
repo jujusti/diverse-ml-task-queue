@@ -242,4 +242,4 @@ func (s *apiServer) relayNewLearnuplet() {
 			log.Printf("[ERROR] Failed to Unmarshal learnuplets: %s", err)
 			continue
 		}
-		log.Printf("[INFO] %
+		log.Printf("[INFO] %d learnuplet(s) with status \"todo\" received from peer", len(le

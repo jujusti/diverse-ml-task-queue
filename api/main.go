@@ -244,3 +244,7 @@ func (s *apiServer) relayNewLearnuplet() {
 		}
 		log.Printf("[INFO] %d learnuplet(s) with status \"todo\" received from peer", len(learnupletsChaincode))
 		if len(learnupletsChaincode) == 0 {
+			continue
+		}
+
+		// Convert them in the Compute format (TEMPORA

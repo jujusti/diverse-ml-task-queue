@@ -249,4 +249,4 @@ func (s *apiServer) relayNewLearnuplet() {
 
 		// Convert them in the Compute format (TEMPORARY)
 		var learnuplets []common.Learnuplet
-		for _, learn
+		for _, learnupletChaincode := range learnupletsChaincode {

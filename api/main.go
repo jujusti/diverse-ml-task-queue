@@ -247,4 +247,6 @@ func (s *apiServer) relayNewLearnuplet() {
 			continue
 		}
 
-		// Convert them in the Compute format (TEMPORA
+		// Convert them in the Compute format (TEMPORARY)
+		var learnuplets []common.Learnuplet
+		for _, learn

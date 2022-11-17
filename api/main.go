@@ -250,3 +250,4 @@ func (s *apiServer) relayNewLearnuplet() {
 		// Convert them in the Compute format (TEMPORARY)
 		var learnuplets []common.Learnuplet
 		for _, learnupletChaincode := range learnupletsChaincode {
+			learnupletFormat, err := learnupletChaincode.L

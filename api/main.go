@@ -252,4 +252,4 @@ func (s *apiServer) relayNewLearnuplet() {
 		for _, learnupletChaincode := range learnupletsChaincode {
 			learnupletFormat, err := learnupletChaincode.LearnupletFormat()
 			if err != nil {
-				log.Printf("[
+				log.Printf("[ERROR] Failed to format chaincode-%s: %s", learnupl

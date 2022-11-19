@@ -255,4 +255,6 @@ func (s *apiServer) relayNewLearnuplet() {
 				log.Printf("[ERROR] Failed to format chaincode-%s: %s", learnupletChaincode.Key, err)
 				continue
 			}
-			// Check learnuple
+			// Check learnuplet is valid and add it to the list
+			err = learnupletFormat.Check()
+			if 

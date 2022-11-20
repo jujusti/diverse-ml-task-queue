@@ -257,4 +257,5 @@ func (s *apiServer) relayNewLearnuplet() {
 			}
 			// Check learnuplet is valid and add it to the list
 			err = learnupletFormat.Check()
-			if 
+			if err != nil {
+				log.Printf("[ERROR] Invalid %s: %s", learnupletChai

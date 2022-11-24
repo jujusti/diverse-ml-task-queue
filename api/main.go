@@ -263,4 +263,8 @@ func (s *apiServer) relayNewLearnuplet() {
 			}
 			learnuplets = append(learnuplets, learnupletFormat)
 		}
-		if len(learnuplets) 
+		if len(learnuplets) == 0 {
+			continue
+		}
+
+		// post the learnuplets if not already d

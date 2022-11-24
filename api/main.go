@@ -261,4 +261,6 @@ func (s *apiServer) relayNewLearnuplet() {
 				log.Printf("[ERROR] Invalid %s: %s", learnupletChaincode.Key, err)
 				continue
 			}
-			learnuplets = a
+			learnuplets = append(learnuplets, learnupletFormat)
+		}
+		if len(learnuplets) 

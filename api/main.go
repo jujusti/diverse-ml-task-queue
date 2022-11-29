@@ -267,4 +267,6 @@ func (s *apiServer) relayNewLearnuplet() {
 			continue
 		}
 
-		// post the learnuplets if not already d
+		// post the learnuplets if not already done
+		var learnupletTodoList []string
+		for _, learnuplet 

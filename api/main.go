@@ -270,4 +270,5 @@ func (s *apiServer) relayNewLearnuplet() {
 		// post the learnuplets if not already done
 		var learnupletTodoList []string
 		for _, learnuplet := range learnuplets {
-			learnupletTodoList = append(learnupletTo
+			learnupletTodoList = append(learnupletTodoList, learnuplet.Key)
+			if stringInSlice(learnuplet.

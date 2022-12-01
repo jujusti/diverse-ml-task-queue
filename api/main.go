@@ -274,4 +274,5 @@ func (s *apiServer) relayNewLearnuplet() {
 			if stringInSlice(learnuplet.Key, brokerLearnQueue) {
 				continue
 			}
-			log.Printf("
+			log.Printf("[DEBUG] Posting %s to broker", learnuplet.Key)
+			e

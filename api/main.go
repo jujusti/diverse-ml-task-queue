@@ -279,4 +279,8 @@ func (s *apiServer) relayNewLearnuplet() {
 			if err != nil {
 				log.Printf("[ERROR] Failed to postLearnuplet: %s", err)
 				continue
-			
+			}
+			brokerLearnQueue = append(brokerLearnQueue, learnuplet.Key)
+		}
+
+		// 

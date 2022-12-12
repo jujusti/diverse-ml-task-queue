@@ -277,4 +277,6 @@ func (s *apiServer) relayNewLearnuplet() {
 			log.Printf("[DEBUG] Posting %s to broker", learnuplet.Key)
 			err = s.postLearnuplet(learnuplet)
 			if err != nil {
-				log.Prin
+				log.Printf("[ERROR] Failed to postLearnuplet: %s", err)
+				continue
+			

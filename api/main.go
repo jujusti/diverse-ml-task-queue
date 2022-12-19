@@ -283,4 +283,5 @@ func (s *apiServer) relayNewLearnuplet() {
 			brokerLearnQueue = append(brokerLearnQueue, learnuplet.Key)
 		}
 
-		// 
+		// Clean brokerLearnQueue
+		log.Printf("[INFO] %d learnuplet(s

@@ -287,4 +287,5 @@ func (s *apiServer) relayNewLearnuplet() {
 		log.Printf("[INFO] %d learnuplet(s) already in the broker queue", len(brokerLearnQueue))
 		for len(brokerLearnQueue) > 0 {
 			if !stringInSlice(brokerLearnQueue[0], learnupletTodoList) {
-				brokerLearnQueue = brokerLearnQueue[1:
+				brokerLearnQueue = brokerLearnQueue[1:]
+				log.Printf("[INFO] %d learnuplet(s) already in the bro

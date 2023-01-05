@@ -309,4 +309,6 @@ func stringInSlice(a string, list []string) bool {
 // For test purposes only
 // ================================================================================
 
-// query allows to query the blockchain via 
+// query allows to query the blockchain via URL PARAMETERS
+func (s *apiServer) query(c *iris.Context) {
+	// Retrieve and format

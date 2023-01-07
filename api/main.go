@@ -311,4 +311,6 @@ func stringInSlice(a string, list []string) bool {
 
 // query allows to query the blockchain via URL PARAMETERS
 func (s *apiServer) query(c *iris.Context) {
-	// Retrieve and format
+	// Retrieve and format URL parameters
+	queryFcn := c.URLParam("fcn")
+	quer

@@ -315,4 +315,5 @@ func (s *apiServer) query(c *iris.Context) {
 	queryFcn := c.URLParam("fcn")
 	queryArgs := strings.Split(c.URLParam("args"), "|")
 
-	// 
+	// Query the peer
+	query, err := s.peer.Query(queryFcn, query

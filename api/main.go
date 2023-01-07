@@ -316,4 +316,6 @@ func (s *apiServer) query(c *iris.Context) {
 	queryArgs := strings.Split(c.URLParam("args"), "|")
 
 	// Query the peer
-	query, err := s.peer.Query(queryFcn, query
+	query, err := s.peer.Query(queryFcn, queryArgs)
+	if err != nil {
+		c.JSON(iris.StatusInternalServerError, map[s

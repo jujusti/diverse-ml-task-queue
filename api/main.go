@@ -313,4 +313,6 @@ func stringInSlice(a string, list []string) bool {
 func (s *apiServer) query(c *iris.Context) {
 	// Retrieve and format URL parameters
 	queryFcn := c.URLParam("fcn")
-	quer
+	queryArgs := strings.Split(c.URLParam("args"), "|")
+
+	// 

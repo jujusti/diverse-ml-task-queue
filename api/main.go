@@ -318,4 +318,10 @@ func (s *apiServer) query(c *iris.Context) {
 	// Query the peer
 	query, err := s.peer.Query(queryFcn, queryArgs)
 	if err != nil {
-		c.JSON(iris.StatusInternalServerError, map[s
+		c.JSON(iris.StatusInternalServerError, map[string]string{"error": err.Error()})
+		return
+	}
+	showJSON(c, query)
+}
+
+//

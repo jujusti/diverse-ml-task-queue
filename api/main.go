@@ -324,4 +324,4 @@ func (s *apiServer) query(c *iris.Context) {
 	showJSON(c, query)
 }
 
-//
+// invoke allows to invoke a transaction in the bloc

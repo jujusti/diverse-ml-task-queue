@@ -325,4 +325,5 @@ func (s *apiServer) query(c *iris.Context) {
 }
 
 // invoke allows to invoke a transaction in the blockchain via URL PARAMETERS
-func (s *apiServer) invoke(c 
+func (s *apiServer) invoke(c *iris.Context) {
+	// Retrieve and format URL par

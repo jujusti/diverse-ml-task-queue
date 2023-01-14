@@ -328,4 +328,6 @@ func (s *apiServer) query(c *iris.Context) {
 func (s *apiServer) invoke(c *iris.Context) {
 	// Retrieve and format URL parameters
 	queryFcn := c.URLParam("fcn")
-	queryArgs := 
+	queryArgs := strings.Split(c.URLParam("args"), "|")
+
+	// Invoke the 

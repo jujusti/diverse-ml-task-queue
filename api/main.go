@@ -330,4 +330,6 @@ func (s *apiServer) invoke(c *iris.Context) {
 	queryFcn := c.URLParam("fcn")
 	queryArgs := strings.Split(c.URLParam("args"), "|")
 
-	// Invoke the 
+	// Invoke the peer
+	id, nonce, err := s.peer.Invoke(queryFcn, queryArgs)
+	if err !

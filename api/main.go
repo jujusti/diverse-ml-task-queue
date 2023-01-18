@@ -333,4 +333,8 @@ func (s *apiServer) invoke(c *iris.Context) {
 	// Invoke the peer
 	id, nonce, err := s.peer.Invoke(queryFcn, queryArgs)
 	if err != nil {
-		c.JSON(iris.StatusInternalServerError, map[string]st
+		c.JSON(iris.StatusInternalServerError, map[string]string{"error": err.Error()})
+		return
+	}
+
+	// Display the re

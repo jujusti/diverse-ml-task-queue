@@ -337,4 +337,5 @@ func (s *apiServer) invoke(c *iris.Context) {
 		return
 	}
 
-	// Display the re
+	// Display the results
+	c.JSON(iris.StatusOK, map[string]string{"id

@@ -343,4 +343,6 @@ func (s *apiServer) invoke(c *iris.Context) {
 
 func showJSON(c *iris.Context, bytesJSON []byte) {
 	if len(bytesJSON) == 0 {
-		c.J
+		c.JSON(iris.StatusInternalServerError, map[string]string{})
+		return
+	}

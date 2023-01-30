@@ -338,4 +338,7 @@ func (s *apiServer) invoke(c *iris.Context) {
 	}
 
 	// Display the results
-	c.JSON(iris.StatusOK, map[string]string{"id
+	c.JSON(iris.StatusOK, map[string]string{"id": id, "nonce": string(nonce)})
+}
+
+func showJSON(c *iris.Context, byt

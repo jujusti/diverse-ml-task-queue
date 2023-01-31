@@ -348,4 +348,5 @@ func showJSON(c *iris.Context, bytesJSON []byte) {
 	}
 
 	var m []map[string]interface{}
-	var m2 map[s
+	var m2 map[string]interface{}
+	if err := json.Unmarshal(bytesJSON, &m); err != nil {

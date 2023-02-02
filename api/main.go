@@ -351,4 +351,4 @@ func showJSON(c *iris.Context, bytesJSON []byte) {
 	var m2 map[string]interface{}
 	if err := json.Unmarshal(bytesJSON, &m); err != nil {
 		if err := json.Unmarshal(bytesJSON, &m2); err != nil {
-			msg :=
+			msg := fmt.Sprintf("Failed to unmarshal peer response: %s. RAW byte

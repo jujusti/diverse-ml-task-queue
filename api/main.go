@@ -352,4 +352,7 @@ func showJSON(c *iris.Context, bytesJSON []byte) {
 	if err := json.Unmarshal(bytesJSON, &m); err != nil {
 		if err := json.Unmarshal(bytesJSON, &m2); err != nil {
 			msg := fmt.Sprintf("Failed to unmarshal peer response: %s. RAW bytes: %s", err, bytesJSON)
-			c.JSON(iris.StatusInternalServerError, map[s
+			c.JSON(iris.StatusInternalServerError, map[string]string{"error": msg})
+			return
+		}
+		c.JSON(iris

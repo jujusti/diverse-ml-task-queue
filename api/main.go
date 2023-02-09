@@ -355,4 +355,7 @@ func showJSON(c *iris.Context, bytesJSON []byte) {
 			c.JSON(iris.StatusInternalServerError, map[string]string{"error": msg})
 			return
 		}
-		c.JSON(iris
+		c.JSON(iris.StatusOK, m2)
+		return
+	}
+	// Display the result

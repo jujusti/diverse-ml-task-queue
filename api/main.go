@@ -358,4 +358,6 @@ func showJSON(c *iris.Context, bytesJSON []byte) {
 		c.JSON(iris.StatusOK, m2)
 		return
 	}
-	// Display the result
+	// Display the results
+	c.JSON(iris.StatusOK, m)
+}

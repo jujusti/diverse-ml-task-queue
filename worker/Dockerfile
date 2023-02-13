@@ -5,4 +5,4 @@ RUN apt-get update && \
   && rm -rf /var/lib/apt/lists/*
 
 ADD build/target /compute-worker
-EN
+ENTRYPOINT ["/compute-worker"]

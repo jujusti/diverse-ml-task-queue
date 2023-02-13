@@ -1,3 +1,5 @@
 FROM debian:stable-slim
 
-RUN apt-get up
+RUN apt-get update && \
+    apt-get install -y libltdl-dev \
+  &&

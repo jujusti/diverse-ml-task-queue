@@ -9,4 +9,4 @@ evaluated) and runs the training/prediction tasks on the network-isolated
 *submission* container. Training tasks' performance increase is also evaluated
 and sent to the orchestrator.
 
-Th
+The specifications of the containers ran by compute is docum

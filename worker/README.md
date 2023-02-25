@@ -12,4 +12,5 @@ and sent to the orchestrator.
 The specifications of the containers ran by compute is documented
 [here](https://morpheoorg.github.io/morpheo/).
 
-Examples *p
+Examples *problem workflow* and *submission* containers can be found
+[here](https://git

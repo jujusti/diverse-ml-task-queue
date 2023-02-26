@@ -13,4 +13,7 @@ The specifications of the containers ran by compute is documented
 [here](https://morpheoorg.github.io/morpheo/).
 
 Examples *problem workflow* and *submission* containers can be found
-[here](https://git
+[here](https://github.com/MorpheoOrg/hypnogram-wf).
+
+CLI Arguments
+-------------

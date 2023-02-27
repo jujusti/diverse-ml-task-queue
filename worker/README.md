@@ -22,4 +22,4 @@ CLI Arguments
 Usage of compute-worker:
 
   -docker-timeout duration
-  
+    	Docker commands timeout (concerns builds, runs, pu

@@ -17,3 +17,9 @@ Examples *problem workflow* and *submission* containers can be found
 
 CLI Arguments
 -------------
+
+```
+Usage of compute-worker:
+
+  -docker-timeout duration
+  

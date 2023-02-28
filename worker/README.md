@@ -24,4 +24,5 @@ Usage of compute-worker:
   -docker-timeout duration
     	Docker commands timeout (concerns builds, runs, pulls, etc...) (default: 15m) (default 15m0s)
   -learn-parallelism int
-    	Number of learning task that t
+    	Number of learning task that this worker can execute in parallel. (default 1)
+  -learn-tim

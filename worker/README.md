@@ -27,4 +27,6 @@ Usage of compute-worker:
     	Number of learning task that this worker can execute in parallel. (default 1)
   -learn-timeout duration
     	After this delay, learning tasks are timed out (default: 20m) (default 20m0s)
-  -nsqlookupd-url
+  -nsqlookupd-urls value
+    	URL(s) of NSQLookupd instances to connect to
+  -orchestrator-h

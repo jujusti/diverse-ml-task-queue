@@ -31,4 +31,5 @@ Usage of compute-worker:
     	URL(s) of NSQLookupd instances to connect to
   -orchestrator-host string
     	Hostname of the orchestrator to send notifications to (leave blank to use the Orchestrator API Mock)
-  -
+  -orchestrator-password string
+    	Basic Authentication 

@@ -29,4 +29,5 @@ Usage of compute-worker:
     	After this delay, learning tasks are timed out (default: 20m) (default 20m0s)
   -nsqlookupd-urls value
     	URL(s) of NSQLookupd instances to connect to
-  -orchestrator-h
+  -orchestrator-host string
+    	Hostname of the orchestrator to send notifications 

@@ -32,4 +32,5 @@ Usage of compute-worker:
   -orchestrator-host string
     	Hostname of the orchestrator to send notifications to (leave blank to use the Orchestrator API Mock)
   -orchestrator-password string
-    	Basic Authentication 
+    	Basic Authentication password of the orchestrator API (default "p")
+  -orchestrator-port int

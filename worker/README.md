@@ -34,4 +34,6 @@ Usage of compute-worker:
   -orchestrator-password string
     	Basic Authentication password of the orchestrator API (default "p")
   -orchestrator-port int
-    	TCP port to contact the orchestrator on (default: 80) (default 8
+    	TCP port to contact the orchestrator on (default: 80) (default 80)
+  -orchestrator-user string
+    	Basic Authentication

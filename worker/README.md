@@ -36,4 +36,5 @@ Usage of compute-worker:
   -orchestrator-port int
     	TCP port to contact the orchestrator on (default: 80) (default 80)
   -orchestrator-user string
-    	Basic Authentication
+    	Basic Authentication username of the orchestrator API (default "u")
+  -predict-par

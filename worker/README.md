@@ -37,4 +37,5 @@ Usage of compute-worker:
     	TCP port to contact the orchestrator on (default: 80) (default 80)
   -orchestrator-user string
     	Basic Authentication username of the orchestrator API (default "u")
-  -predict-par
+  -predict-parallelism int
+    	Number of learning task that this worker

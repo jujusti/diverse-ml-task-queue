@@ -38,4 +38,6 @@ Usage of compute-worker:
   -orchestrator-user string
     	Basic Authentication username of the orchestrator API (default "u")
   -predict-parallelism int
-    	Number of learning task that this worker
+    	Number of learning task that this worker can execute in parallel. (default 1)
+  -predict-timeout duration
+ 

@@ -40,4 +40,4 @@ Usage of compute-worker:
   -predict-parallelism int
     	Number of learning task that this worker can execute in parallel. (default 1)
   -predict-timeout duration
- 
+    	After this delay, prediction tasks are timed out (default: 20m) (de

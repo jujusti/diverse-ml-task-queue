@@ -42,4 +42,6 @@ Usage of compute-worker:
   -predict-timeout duration
     	After this delay, prediction tasks are timed out (default: 20m) (default 20m0s)
   -storage-host string
-    	Hostname of the storage API to retrieve data from (leave blank to use the Storage API Mock
+    	Hostname of the storage API to retrieve data from (leave blank to use the Storage API Mock)
+  -storage-password string
+    	Basic Authentication password of th

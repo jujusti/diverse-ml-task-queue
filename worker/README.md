@@ -44,4 +44,6 @@ Usage of compute-worker:
   -storage-host string
     	Hostname of the storage API to retrieve data from (leave blank to use the Storage API Mock)
   -storage-password string
-    	Basic Authentication password of th
+    	Basic Authentication password of the storage API (default "p")
+  -storage-port int
+    	TCP port t

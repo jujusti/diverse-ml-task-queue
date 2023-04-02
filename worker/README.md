@@ -46,4 +46,5 @@ Usage of compute-worker:
   -storage-password string
     	Basic Authentication password of the storage API (default "p")
   -storage-port int
-    	TCP port t
+    	TCP port to contact storage on (default: 80) (default 80)
+  -storage-user

@@ -54,4 +54,7 @@ Usage of compute-worker:
 
 ### TODO
 
-* Retry policies fo
+* Retry policies for our tasks depending on the source of the error
+
+Maintainers
+---------

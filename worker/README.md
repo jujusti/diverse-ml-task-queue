@@ -48,4 +48,10 @@ Usage of compute-worker:
   -storage-port int
     	TCP port to contact storage on (default: 80) (default 80)
   -storage-user string
-    	Basic Authentication username of the stora
+    	Basic Authentication username of the storage API (default "u")
+
+```
+
+### TODO
+
+* Retry policies fo

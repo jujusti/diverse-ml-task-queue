@@ -57,4 +57,5 @@ Usage of compute-worker:
 * Retry policies for our tasks depending on the source of the error
 
 Maintainers
----------
+-----------
+* Étienne Lafarge <etienne@rythm.co>

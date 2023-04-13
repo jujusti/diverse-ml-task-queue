@@ -81,3 +81,61 @@ type Worker struct {
 	storage client.Storage
 	peer    client.Peer
 }
+
+// Perfuplet describes the performance.json file, an output of learning tasks
+type Perfuplet struct {
+	Perf      float64            `json:"perf"`
+	TrainPerf map[string]float64 `json:"train_perf"`
+	TestPerf  map[string]float64 `json:"test_perf"`
+}
+
+// NewWorker creates a Worker instance
+func NewWorker(dataFolder, trainFolder, testFolder, untargetedTestFolder, predFolder, perfFolder, modelFolder, problemImagePrefix, algoImagePrefix string, containerRuntime common.ContainerRuntime, storage client.Storage, peer client.Peer) *Worker {
+	return &Worker{
+		ID: uuid.NewV4(),
+
+		dataFolder:           dataFolder,
+		trainFolder:          trainFolder,
+		testFolder:           testFolder,
+		predFolder:           predFolder,
+		perfFolder:           perfFolder,
+		untargetedTestFolder: untargetedTestFolder,
+		modelFolder:          modelFolder,
+
+		problemImagePrefix: problemImagePrefix,
+		algoImagePrefix:    algoImagePrefix,
+		containerRuntime:   containerRuntime,
+
+		storage: storage,
+		peer:    peer,
+	}
+}
+
+// HandleLearn manages a learning task (peer status updates, etc...)
+func (w *Worker) HandleLearn(message []byte) (err error) {
+	log.Println("[DEBUG][learn] Starting learning task")
+
+	// Unmarshal the learn-uplet
+	var task common.Learnuplet
+	err = json.NewDecoder(bytes.NewReader(message)).Decode(&task)
+	if err != nil {
+		return fmt.Errorf("Error un-marshaling learn-uplet: %s -- Body: %s", err, message)
+	}
+
+	if err = task.Check(); err != nil {
+		return fmt.Errorf("Error in train task: %s -- Body: %s", err, message)
+	}
+
+	// Update its status to pending on the peer
+	_, _, err = w.peer.SetUpletWorker(task.Key, w.ID.String())
+	if err != nil {
+		return fmt.Errorf("Error setting uplet worker: %s", err)
+	}
+
+	err = w.LearnWorkflow(task)
+	if err != nil {
+		// TODO: handle fatal and non-fatal errors differently and set learnuplet status to failed only
+		// if the error was fatal
+		var m map[string]float64
+		var f float64
+		_, _, err2 := w.peer.ReportLearn(task.Key, common.TaskStatusFailed, f, m, m)

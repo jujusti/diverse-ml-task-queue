@@ -13,3 +13,71 @@
  * under the terms of the CeCILL license as circulated by CEA, CNRS and
  * INRIA at the following URL "http://www.cecill.info".
  *
+ * As a counterpart to the access to the source code and  rights to copy,
+ * modify and redistribute granted by the license, users are provided only
+ * with a limited warranty  and the software's author,  the holder of the
+ * economic rights,  and the successive licensors  have only  limited
+ * liability.
+ *
+ * In this respect, the user's attention is drawn to the risks associated
+ * with loading,  using,  modifying and/or developing or reproducing the
+ * software by the user in light of its specific status of free software,
+ * that may mean  that it is complicated to manipulate,  and  that  also
+ * therefore means  that it is reserved for developers  and  experienced
+ * professionals having in-depth computer knowledge. Users are therefore
+ * encouraged to load and test the software's suitability as regards their
+ * requirements in conditions enabling the security of their systems and/or
+ * data to be ensured and,  more generally, to use and operate it in the
+ * same conditions as regards security.
+ *
+ * The fact that you are presently reading this means that you have had
+ * knowledge of the CeCILL license and that you accept its terms.
+ */
+
+package main
+
+import (
+	"archive/tar"
+	"bytes"
+	"compress/gzip"
+	"encoding/json"
+	"fmt"
+	"io"
+	// "io/ioutil"
+	"log"
+	"os"
+	"path/filepath"
+
+	"github.com/satori/go.uuid"
+
+	"github.com/MorpheoOrg/morpheo-go-packages/client"
+	"github.com/MorpheoOrg/morpheo-go-packages/common"
+)
+
+// Worker describes a worker (where it stores its data, which container runtime it uses...).
+// Most importantly, it carefully implements all the steps of our learning/testing/prediction
+// workflow.
+//
+// For an in-detail understanding of what these different steps do and how, check out Camille's
+// awesome example: https://github.com/MorpheoOrg/hypnogram-wf
+// The doc also gets there in detail: https://morpheoorg.github.io/morpheo/modules/learning.html
+type Worker struct {
+	ID uuid.UUID
+	// Worker configuration variables
+	dataFolder           string
+	trainFolder          string
+	testFolder           string
+	untargetedTestFolder string
+	modelFolder          string
+	predFolder           string
+	perfFolder           string
+	problemImagePrefix   string
+	algoImagePrefix      string
+
+	// ContainerRuntime abstractions
+	containerRuntime common.ContainerRuntime
+
+	// Morpheo API clients
+	storage client.Storage
+	peer    client.Peer
+}

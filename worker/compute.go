@@ -139,3 +139,56 @@ func (w *Worker) HandleLearn(message []byte) (err error) {
 		var m map[string]float64
 		var f float64
 		_, _, err2 := w.peer.ReportLearn(task.Key, common.TaskStatusFailed, f, m, m)
+		if err2 != nil {
+			return fmt.Errorf("Error in LearnWorkflow: %s. Error setting learnuplet status to failed on the peer: %s", err, err2)
+		}
+		return fmt.Errorf("Error in LearnWorkflow: %s", err)
+	}
+	return nil
+}
+
+// HandlePred manages a prediction task (peer status updates, etc...)
+func (w *Worker) HandlePred(message []byte) (err error) {
+	// log.Println("[DEBUG][pred] Starting predicting task")
+
+	// // Unmarshal the learn-uplet
+	// var task common.Preduplet
+	// err = json.NewDecoder(bytes.NewReader(message)).Decode(&task)
+	// if err != nil {
+	// 	return fmt.Errorf("Error un-marshaling preduplet: %s -- Body: %s", err, message)
+	// }
+
+	// if err = task.Check(); err != nil {
+	// 	return fmt.Errorf("Error in pred task: %s -- Body: %s", err, message)
+	// }
+
+	// // Update its status to pending on the peer
+	// err = w.peer.UpdateUpletStatus(common.TypePredUplet, common.TaskStatusPending, task.Key, task.Worker)
+	// if err != nil {
+	// 	return fmt.Errorf("Error setting preduplet status to pending on the peer: %s", err)
+	// }
+
+	// err = w.PredWorkflow(task)
+	// if err != nil {
+	// 	// TODO: handle fatal and non-fatal errors differently and set preduplet status to failed only
+	// 	// if the error was fatal
+	// 	err2 := w.peer.UpdateUpletStatus(common.TypePredUplet, common.TaskStatusFailed, task.Key, task.Worker)
+	// 	if err2 != nil {
+	// 		return fmt.Errorf("2 Errors: Error in PredWorkflow: %s. Error setting preduplet status to failed on the peer: %s", err, err2)
+	// 	}
+	// 	return fmt.Errorf("Error in PredWorkflow: %s", err)
+	// }
+	return nil
+}
+
+// LearnWorkflow implements our learning workflow
+func (w *Worker) LearnWorkflow(task common.Learnuplet) (err error) {
+	log.Printf("[DEBUG][learn] Starting learning workflow for %s", task.Key)
+
+	// Setup directory structure
+	taskDataFolder := filepath.Join(w.dataFolder, task.Algo.String())
+	trainFolder := filepath.Join(taskDataFolder, w.trainFolder)
+	testFolder := filepath.Join(taskDataFolder, w.testFolder)
+	untargetedTestFolder := filepath.Join(taskDataFolder, w.untargetedTestFolder)
+	modelFolder := filepath.Join(taskDataFolder, w.modelFolder)
+	perfFolder := filepath.Join(taskDataFolder, w.perfFolder)

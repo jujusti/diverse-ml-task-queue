@@ -192,3 +192,65 @@ func (w *Worker) LearnWorkflow(task common.Learnuplet) (err error) {
 	untargetedTestFolder := filepath.Join(taskDataFolder, w.untargetedTestFolder)
 	modelFolder := filepath.Join(taskDataFolder, w.modelFolder)
 	perfFolder := filepath.Join(taskDataFolder, w.perfFolder)
+
+	pathList := []string{taskDataFolder, trainFolder, testFolder, untargetedTestFolder, modelFolder, perfFolder}
+	for _, path := range pathList {
+		err = os.MkdirAll(path, os.ModeDir)
+		if err != nil {
+			return fmt.Errorf("Error creating folder under %s: %s", path, err)
+		}
+	}
+
+	// Let's make sure these folders are wiped out once the task is done/failed
+	defer os.RemoveAll(taskDataFolder)
+
+	// Load problem workflow
+	problemWorkflow, err := w.storage.GetProblemWorkflowBlob(task.Problem)
+	if err != nil {
+		return fmt.Errorf("Error pulling problem workflow %s from storage: %s", task.Problem, err)
+	}
+	problemImageName := fmt.Sprintf("%s-%s", w.problemImagePrefix, task.Problem)
+	err = w.ImageLoad(problemImageName, problemWorkflow)
+	if err != nil {
+		return fmt.Errorf("Error loading problem workflow image %s in Docker daemon: %s", task.Problem, err)
+	}
+	problemWorkflow.Close()
+	defer w.containerRuntime.ImageUnload(problemImageName)
+
+	log.Println("[DEBUG][learn] 1st Image loaded")
+	// Load algo
+	algo, err := w.storage.GetAlgoBlob(task.Algo)
+	if err != nil {
+		return fmt.Errorf("Error pulling algo %s from storage: %s", task.Algo, err)
+	}
+
+	algoImageName := fmt.Sprintf("%s-%s", w.algoImagePrefix, task.Algo)
+	err = w.ImageLoad(algoImageName, algo)
+	if err != nil {
+		return fmt.Errorf("Error loading algo image %s in Docker daemon: %s", algoImageName, err)
+	}
+	algo.Close()
+	defer w.containerRuntime.ImageUnload(algoImageName)
+
+	// Pull model if a model_start parameter was given in the learn-uplet
+	if task.Rank > 0 {
+		// Check that modelStart is set
+		if uuid.Equal(uuid.Nil, task.ModelStart) {
+			return fmt.Errorf("Error in learnuplet: ModelStart is a Nil uuid, although Rank is set to %d", task.Rank)
+		}
+		// Pull model from storage
+		model, err := w.storage.GetModelBlob(task.ModelStart)
+		if err != nil {
+			return fmt.Errorf("Error pulling start model %s from storage: %s", task.ModelStart, err)
+		}
+		err = w.UntargzInFolder(modelFolder, model)
+		if err != nil {
+			return fmt.Errorf("Error un-tar-gz-ing model: %s", err)
+		}
+		model.Close()
+	}
+
+	// Pulling train dataset
+	for _, dataID := range task.TrainData {
+		data, err := w.storage.GetDataBlob(dataID)
+		if err != nil {

@@ -254,3 +254,67 @@ func (w *Worker) LearnWorkflow(task common.Learnuplet) (err error) {
 	for _, dataID := range task.TrainData {
 		data, err := w.storage.GetDataBlob(dataID)
 		if err != nil {
+			return fmt.Errorf("Error pulling train dataset %s from storage: %s", dataID, err)
+		}
+		path := fmt.Sprintf("%s/%s", trainFolder, dataID)
+		dataFile, err := os.Create(path)
+		if err != nil {
+			return fmt.Errorf("Error creating file %s: %s", path, err)
+		}
+		n, err := io.Copy(dataFile, data)
+		if err != nil {
+			return fmt.Errorf("Error copying train data file %s (%d bytes written): %s", path, n, err)
+		}
+		dataFile.Close()
+		data.Close()
+	}
+
+	// And the test data
+	for _, dataID := range task.TestData {
+		data, err := w.storage.GetDataBlob(dataID)
+		if err != nil {
+			return fmt.Errorf("Error pulling test dataset %s from storage: %s", dataID, err)
+		}
+		path := fmt.Sprintf("%s/%s", testFolder, dataID)
+		dataFile, err := os.Create(path)
+		n, err := io.Copy(dataFile, data)
+		if err != nil {
+			return fmt.Errorf("Error copying test data file %s (%d bytes written): %s", path, n, err)
+		}
+		dataFile.Close()
+		data.Close()
+	}
+
+	// Let's copy test data into untargetedTestFolder and remove targets
+	_, err = w.UntargetTestingVolume(problemImageName, testFolder, untargetedTestFolder)
+	if err != nil {
+		return fmt.Errorf("Error preparing problem %s for model %s: %s", task.Problem, task.ModelStart, err)
+	}
+
+	// Let's pass the task to our execution backend, now that everything should be in place
+	_, err = w.Train(algoImageName, trainFolder, untargetedTestFolder, modelFolder)
+	if err != nil {
+		return fmt.Errorf("Error in train task: %s -- Body: %s", err, task)
+	}
+
+	// Let's compute the performance !
+	_, err = w.ComputePerf(problemImageName, trainFolder, testFolder, untargetedTestFolder, perfFolder)
+	if err != nil {
+		// FIXME: do not return here
+		return fmt.Errorf("Error computing perf for problem %s and model (new) %s: %s", task.Problem, task.ModelEnd, err)
+	}
+
+	// Let's create a new model and post it to storage
+	algoInfo, err := w.storage.GetAlgo(task.Algo)
+	if err != nil {
+		return fmt.Errorf("Error retrieving algorithm %s metadata: %s", task.Algo, err)
+	}
+	newModel := common.NewModel(task.ModelEnd, algoInfo)
+	newModel.ID = task.ModelEnd
+
+	// Let's compress our model in a separate goroutine while writing it on disk on the fly
+	path := fmt.Sprintf("%s/model.tar.gz", taskDataFolder)
+	modelArchiveWriter, err := os.Create(path)
+	if err != nil {
+		return fmt.Errorf("Error creating new model archive file %s: %s", path, err)
+	}

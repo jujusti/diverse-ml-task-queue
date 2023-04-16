@@ -383,3 +383,63 @@ func (w *Worker) LearnWorkflow(task common.Learnuplet) (err error) {
 // 	if err != nil {
 // 		return fmt.Errorf("Error creating pred folder under %s: %s", predFolder, err)
 // 	}
+
+// 	// Pulling data from storage to testFolder
+// 	data, err := w.storage.GetDataBlob(task.Data)
+// 	if err != nil {
+// 		return fmt.Errorf("Error pulling data %s from storage: %s", task.Data, err)
+// 	}
+// 	path := fmt.Sprintf("%s/%s", testFolder, task.Data)
+// 	dataFile, err := os.Create(path)
+// 	if err != nil {
+// 		return fmt.Errorf("Error creating file %s: %s", path, err)
+// 	}
+// 	n, err := io.Copy(dataFile, data)
+// 	if err != nil {
+// 		return fmt.Errorf("Error copying data file %s (%d bytes written): %s", path, n, err)
+// 	}
+// 	dataFile.Close()
+// 	data.Close()
+
+// 	// Pull model from storage and store it in modelFolder
+// 	model, err := w.storage.GetModelBlob(task.Model)
+// 	if err != nil {
+// 		return fmt.Errorf("Error pulling model %s from storage: %s", task.Model, err)
+// 	}
+
+// 	err = w.UntargzInFolder(modelFolder, model)
+// 	if err != nil {
+// 		return fmt.Errorf("Error un-tar-gz-ing model: %s", err)
+// 	}
+// 	model.Close()
+
+// 	// Rename model
+// 	files, err := ioutil.ReadDir(modelFolder)
+// 	if err != nil {
+// 		return fmt.Errorf("Error reading modelFolder: %s", err)
+// 	}
+// 	if len(files) != 1 {
+// 		return fmt.Errorf("Error: several files in modelFolder")
+// 	}
+// 	for _, f := range files {
+// 		oldpath := filepath.Join(modelFolder, f.Name())
+// 		newpath := filepath.Join(modelFolder, "model_trained.json")
+// 		if err = os.Rename(oldpath, newpath); err != nil {
+// 			return fmt.Errorf("Error renaming model: %s", err)
+// 		}
+// 	}
+
+// 	// Pull associated algo and load it into a container
+// 	modelInfo, err := w.storage.GetModel(task.Model)
+// 	if err != nil {
+// 		return fmt.Errorf("Error retrieving model %s metadata: %s", task.Model, err)
+// 	}
+// 	algo, err := w.storage.GetAlgoBlob(modelInfo.Algo)
+// 	if err != nil {
+// 		return fmt.Errorf("Error pulling algo %s from storage: %s", modelInfo.Algo, err)
+// 	}
+// 	algoImageName := fmt.Sprintf("%s-%s", w.algoImagePrefix, modelInfo.Algo)
+// 	err = w.ImageLoad(algoImageName, algo)
+// 	if err != nil {
+// 		return fmt.Errorf("Error loading algo image %s in Docker daemon: %s", algoImageName, err)
+// 	}

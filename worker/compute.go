@@ -318,3 +318,68 @@ func (w *Worker) LearnWorkflow(task common.Learnuplet) (err error) {
 	if err != nil {
 		return fmt.Errorf("Error creating new model archive file %s: %s", path, err)
 	}
+	err = w.TargzFolder(modelFolder, modelArchiveWriter)
+	if err != nil {
+		return fmt.Errorf("Error tar-gzipping new model %s: %s", task.ModelEnd, err)
+	}
+	modelArchiveWriter.Close()
+
+	modelArchiveReader, err := os.Open(path)
+	if err != nil {
+		return fmt.Errorf("Error reading new model archive file %s: %s", path, err)
+	}
+	modelArchiveStat, err := modelArchiveReader.Stat()
+	if err != nil {
+		return fmt.Errorf("Error reading new model archive size %s: %s", path, err)
+	}
+
+	if err := w.storage.PostModel(newModel, modelArchiveReader, modelArchiveStat.Size()); err != nil {
+		return fmt.Errorf("Error streaming new model %s to storage: %s", task.ModelEnd, err)
+	}
+	modelArchiveReader.Close()
+
+	// Let's send the perf file to the peer
+	performanceFilePath := fmt.Sprintf("%s/performance.json", perfFolder)
+	resultFile, err := os.Open(performanceFilePath)
+	if err != nil {
+		return fmt.Errorf("Error reading performance file %s: %s", performanceFilePath, err)
+	}
+	perfuplet := Perfuplet{}
+	err = json.NewDecoder(resultFile).Decode(&perfuplet)
+	if err != nil {
+		return fmt.Errorf("Error un-marshaling performance file to JSON: %s", err)
+	}
+	if _, _, err := w.peer.ReportLearn(task.Key, common.TaskStatusDone, perfuplet.Perf, perfuplet.TrainPerf, perfuplet.TestPerf); err != nil {
+		return fmt.Errorf("Error posting learn result %s to peer: %s", task.ModelEnd, err)
+	}
+
+	resultFile.Close()
+	os.Remove(performanceFilePath)
+
+	log.Printf("[INFO][learn] Train finished with success, cleaning up...")
+
+	return
+}
+
+// // PredWorkflow handles our prediction tasks
+// func (w *Worker) PredWorkflow(task common.Preduplet) (err error) {
+// 	log.Println("[DEBUG][pred] Starting predicting workflow")
+
+// 	// Setup directory structure
+// 	taskDataFolder := filepath.Join(w.dataFolder, task.Model.String())
+// 	testFolder := filepath.Join(taskDataFolder, w.testFolder)
+// 	modelFolder := filepath.Join(taskDataFolder, w.modelFolder)
+// 	predFolder := filepath.Join(testFolder, w.predFolder)
+
+// 	err = os.MkdirAll(testFolder, os.ModeDir)
+// 	if err != nil {
+// 		return fmt.Errorf("Error creating test folder under %s: %s", testFolder, err)
+// 	}
+// 	err = os.MkdirAll(modelFolder, os.ModeDir)
+// 	if err != nil {
+// 		return fmt.Errorf("Error creating model folder under %s: %s", modelFolder, err)
+// 	}
+// 	err = os.MkdirAll(predFolder, os.ModeDir)
+// 	if err != nil {
+// 		return fmt.Errorf("Error creating pred folder under %s: %s", predFolder, err)
+// 	}

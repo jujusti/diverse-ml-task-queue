@@ -554,3 +554,74 @@ func (w *Worker) UntargzInFolder(folder string, tarGzReader io.Reader) error {
 		_, err = io.Copy(file, tarReader)
 		if err != nil {
 			return fmt.Errorf("Error unflattening tar archive: error writing to file %s: %s", path, err)
+		}
+	}
+	return nil
+}
+
+// TargzFolder tars and gzips a folder and forwards it to an io.Writer
+func (w *Worker) TargzFolder(folder string, dest io.Writer) error {
+	// Let's wire our writer together
+	zipWriter := gzip.NewWriter(dest)
+	defer zipWriter.Close()
+	tarWriter := tar.NewWriter(zipWriter)
+	defer tarWriter.Close()
+
+	// Let's walk the target folder recursively and add each file entry to the tar archive
+	return filepath.Walk(folder, func(path string, info os.FileInfo, walkerr error) error {
+		if walkerr != nil {
+			return fmt.Errorf("Error walking %s: %s", folder, walkerr)
+		}
+
+		if info.IsDir() {
+			return nil
+		}
+
+		filename, err := filepath.Rel(folder, path)
+		if err != nil {
+			return fmt.Errorf("Error removing %s component from path %s: %s", folder, path, err)
+		}
+
+		file, err := os.Open(path)
+		if err != nil {
+			return fmt.Errorf("Error opening file from path %s: %s", path, err)
+		}
+		defer file.Close()
+		header := &tar.Header{
+			Name:    filename,
+			Size:    info.Size(),
+			Mode:    0664,
+			ModTime: info.ModTime(),
+		}
+
+		if err = tarWriter.WriteHeader(header); err != nil {
+			return fmt.Errorf("Error writing tar header for file %s: %s", path, err)
+		}
+
+		if _, err := io.Copy(tarWriter, file); err != nil {
+			return fmt.Errorf("Error writing file %s to tar archive: %s", path, err)
+		}
+
+		return nil
+	})
+}
+
+// TargzFile tars and gzips a file and forwards it to an io.Writer
+func TargzFile(file *os.File, dest io.Writer) error {
+	// Let's wire our writer together
+	zipWriter := gzip.NewWriter(dest)
+	defer zipWriter.Close()
+	tarWriter := tar.NewWriter(zipWriter)
+	defer tarWriter.Close()
+
+	stat, err := file.Stat()
+	if err != nil {
+		return fmt.Errorf("Error getting file info: %s", err)
+	}
+	// Let's create the header
+	header := &tar.Header{
+		Name:    stat.Name(),
+		Size:    stat.Size(),
+		Mode:    0664,
+		ModTime: stat.ModTime(),
+	}

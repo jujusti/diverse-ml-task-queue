@@ -443,3 +443,60 @@ func (w *Worker) LearnWorkflow(task common.Learnuplet) (err error) {
 // 	if err != nil {
 // 		return fmt.Errorf("Error loading algo image %s in Docker daemon: %s", algoImageName, err)
 // 	}
+// 	algo.Close()
+// 	defer w.containerRuntime.ImageUnload(algoImageName)
+
+// 	// Let's pass the prediction task to our execution backend, now that everything should be in place
+// 	_, err = w.Predict(algoImageName, testFolder, predFolder, modelFolder)
+// 	if err != nil {
+// 		return fmt.Errorf("Error in pred task: %s -- Body: %s", err, task)
+// 	}
+
+// 	// Let's send the prediction to Storage and address & status to Peer
+// 	// Check if prediction file exists
+// 	path = filepath.Join(predFolder, task.Data.String())
+// 	if _, err := os.Stat(path); os.IsNotExist(err) {
+// 		return fmt.Errorf("Error: missing prediction file for data %s", task.Data.String())
+// 	}
+
+// 	// Open file and retrieve size
+// 	file, err := os.Open(path)
+// 	if err != nil {
+// 		return fmt.Errorf("Error opening prediction file from path %s: %s", path, err)
+// 	}
+// 	defer file.Close()
+
+// 	stat, err := file.Stat()
+// 	if err != nil {
+// 		return fmt.Errorf("Error retrieving file stat: %s", err)
+// 	}
+// 	filesize := stat.Size()
+
+// 	// // Let's tar-gz the file
+// 	// var targzFile bytes.Buffer
+// 	// err = TargzFile(file, &targzFile)
+// 	// if err != nil {
+// 	// 	log.Println("Error compressing prediction file from path %s: %s", path, err)
+// 	// 	continue
+// 	// }
+
+// 	// Send the prediction to storage
+// 	log.Println("[DEBUG][pred] sending the predictions to Storage...")
+// 	newPrediction := common.NewPrediction()
+// 	err = w.storage.PostPrediction(newPrediction, file, filesize)
+// 	if err != nil {
+// 		return fmt.Errorf("Error streaming new prediction %s to storage: %s", newPrediction.ID, err)
+// 	}
+
+// 	// Send status and prediction address to Peer
+// 	log.Println("[DEBUG][pred] sending the status and prediction UUID to Peer...")
+// 	err = w.peer.PostPredResult(task.Key, common.TaskStatusDone, newPrediction.ID)
+// 	if err != nil {
+// 		return fmt.Errorf("Error setting preduplet status to 'done' on the peer: %s", err)
+// 	}
+
+// 	log.Printf("[INFO][pred] Prediction finished with success, cleaning up...")
+// 	return nil
+// }
+
+// ImageLoad loads the docker image corresponding to a problem workflow/submission container in the

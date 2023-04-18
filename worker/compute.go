@@ -500,3 +500,57 @@ func (w *Worker) LearnWorkflow(task common.Learnuplet) (err error) {
 // }
 
 // ImageLoad loads the docker image corresponding to a problem workflow/submission container in the
+// container runtime that will then run this problem workflow/submission container
+func (w *Worker) ImageLoad(imageName string, imageReader io.Reader) error {
+	imageTarReader, err := gzip.NewReader(imageReader)
+	if err != nil {
+		return fmt.Errorf("Error un-gzipping image %s: %s", imageName, err)
+	}
+	defer imageTarReader.Close()
+
+	image, err := w.containerRuntime.ImageBuild(imageName, imageTarReader)
+	if err != nil {
+		return fmt.Errorf("Error building image %s: %s", imageName, err)
+	}
+	defer image.Close()
+
+	log.Printf("[DEBUG][containerRuntime] Loading image %s...", imageName)
+	return w.containerRuntime.ImageLoad(imageName, image)
+}
+
+// UntargzInFolder unflattens a .tar.gz archive provided as an io.Reader into a given folder
+func (w *Worker) UntargzInFolder(folder string, tarGzReader io.Reader) error {
+	zipReader, err := gzip.NewReader(tarGzReader)
+	if err != nil {
+		return fmt.Errorf("Error un-gzipping model: %s", err)
+	}
+	defer zipReader.Close()
+
+	tarReader := tar.NewReader(zipReader)
+
+	for {
+		header, err := tarReader.Next()
+		if err == io.EOF {
+			break
+		} else if err != nil {
+			return fmt.Errorf("Error reading model tar archive: %s", err)
+		}
+
+		path := filepath.Join(folder, header.Name)
+		info := header.FileInfo()
+		if info.IsDir() {
+			if err := os.MkdirAll(path, info.Mode()); err != nil {
+				return fmt.Errorf("Error unflattening tar archive: error creating directory %s: %s", path, err)
+			}
+			continue
+		}
+
+		file, err := os.OpenFile(path, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, info.Mode())
+		if err != nil {
+			return fmt.Errorf("Error unflattening tar archive: error creating file %s: %s", path, err)
+		}
+		defer file.Close()
+
+		_, err = io.Copy(file, tarReader)
+		if err != nil {
+			return fmt.Errorf("Error unflattening tar archive: error writing to file %s: %s", path, err)

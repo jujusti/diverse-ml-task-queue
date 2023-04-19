@@ -625,3 +625,58 @@ func TargzFile(file *os.File, dest io.Writer) error {
 		Mode:    0664,
 		ModTime: stat.ModTime(),
 	}
+	// write the header to the tarball archive
+	if err = tarWriter.WriteHeader(header); err != nil {
+		return fmt.Errorf("Error writing tar header for file %s", err)
+	}
+	if _, err := io.Copy(tarWriter, file); err != nil {
+		return fmt.Errorf("Error writing file %s to tar archive", err)
+	}
+	return nil
+}
+
+// SetupDirectories creates all the required directory. Useful for testing
+func (w *Worker) SetupDirectories(taskDataFolder string, filemode os.FileMode) error {
+	trainFolder := filepath.Join(taskDataFolder, w.trainFolder)
+	testFolder := filepath.Join(taskDataFolder, w.testFolder)
+	modelFolder := filepath.Join(taskDataFolder, w.modelFolder)
+	predFolder := filepath.Join(testFolder, w.predFolder)
+	untargetedTestFolder := filepath.Join(taskDataFolder, w.untargetedTestFolder)
+	perfFolder := filepath.Join(taskDataFolder, w.perfFolder)
+
+	pathList := []string{taskDataFolder, trainFolder, testFolder, modelFolder, predFolder, untargetedTestFolder, perfFolder}
+	for _, path := range pathList {
+		err := os.MkdirAll(path, filemode)
+		if err != nil {
+			return fmt.Errorf("Error creating folder under %s: %s", path, err)
+		}
+	}
+	return nil
+}
+
+// UntargetTestingVolume copies test data from /<host-data-volume>/<model>/test to
+// /<host-data-volume>/<model>/untargeted_test and removes targets from files... using the problem
+// workflow container.
+func (w *Worker) UntargetTestingVolume(problemImage, testFolder, untargetedTestFolder string) (containerID string, err error) {
+	return w.containerRuntime.RunImageInUntrustedContainer(
+		problemImage,
+		[]string{"-T", "detarget", "-i", "/hidden_data", "-s", "/submission_data"},
+		map[string]string{
+			testFolder:           "/hidden_data/test",
+			untargetedTestFolder: "/submission_data/test",
+		}, true)
+}
+
+// Train launches the submission container's train routines
+func (w *Worker) Train(modelImage, trainFolder, testFolder, modelFolder string) (containerID string, err error) {
+	return w.containerRuntime.RunImageInUntrustedContainer(
+		modelImage,
+		[]string{"-V", "/data", "-T", "train"},
+		map[string]string{
+			trainFolder: "/data/train",
+			testFolder:  "/data/test",
+			modelFolder: "/data/model",
+		}, false)
+}
+
+// Predict launches the submission container's predict routines

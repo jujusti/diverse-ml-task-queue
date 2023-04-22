@@ -4,4 +4,6 @@
  * contact@morpheo.co
  *
  * This software is part of the Morpheo project, an open-source machine
- * learning platf
+ * learning platform.
+ *
+ * This software is governed by the CeCILL lic

@@ -680,3 +680,26 @@ func (w *Worker) Train(modelImage, trainFolder, testFolder, modelFolder string) 
 }
 
 // Predict launches the submission container's predict routines
+func (w *Worker) Predict(modelImage, testFolder string, predFolder string, modelFolder string) (containerID string, err error) {
+	return w.containerRuntime.RunImageInUntrustedContainer(
+		modelImage,
+		[]string{"-V", "/data", "-T", "predict"},
+		map[string]string{
+			testFolder:  "/data/test",
+			predFolder:  "/data/test/pred",
+			modelFolder: "/data/model",
+		}, true)
+}
+
+// ComputePerf analyses the prediction folders and computes a score for the model
+func (w *Worker) ComputePerf(problemImage, trainFolder, testFolder, untargetedTestFolder, perfFolder string) (containerID string, err error) {
+	return w.containerRuntime.RunImageInUntrustedContainer(
+		problemImage,
+		[]string{"-T", "perf", "-i", "/hidden_data", "-s", "/submission_data"},
+		map[string]string{
+			testFolder:           "/hidden_data/test",
+			perfFolder:           "/hidden_data/perf",
+			trainFolder:          "/submission_data/train",
+			untargetedTestFolder: "/submission_data/test",
+		}, true)
+}

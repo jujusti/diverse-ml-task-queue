@@ -23,4 +23,4 @@
  * software by the user in light of its specific status of free software,
  * that may mean  that it is complicated to manipulate,  and  that  also
  * therefore means  that it is reserved for developers  and  experienced
- * profe
+ * professionals having in-depth computer knowledge. Users are

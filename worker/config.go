@@ -38,3 +38,8 @@ package main
 import (
 	"flag"
 	"time"
+
+	"github.com/MorpheoOrg/morpheo-go-packages/common"
+)
+
+// ConsumerConf

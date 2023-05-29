@@ -42,4 +42,5 @@ import (
 	"github.com/MorpheoOrg/morpheo-go-packages/common"
 )
 
-// ConsumerConf
+// ConsumerConfig holds the consumer configuration
+type ConsumerConfig s

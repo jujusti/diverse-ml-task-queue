@@ -43,4 +43,7 @@ import (
 )
 
 // ConsumerConfig holds the consumer configuration
-type ConsumerConfig s
+type ConsumerConfig struct {
+	// Broker
+	NsqlookupdURLs     []string
+	Ns

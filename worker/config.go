@@ -46,4 +46,6 @@ import (
 type ConsumerConfig struct {
 	// Broker
 	NsqlookupdURLs     []string
-	Ns
+	NsqdURL            string
+	LearnParallelism   int
+	PredictParalle

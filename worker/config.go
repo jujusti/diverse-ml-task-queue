@@ -48,4 +48,6 @@ type ConsumerConfig struct {
 	NsqlookupdURLs     []string
 	NsqdURL            string
 	LearnParallelism   int
-	PredictParalle
+	PredictParallelism int
+	LearnTimeout       time.Duration
+	PredictTimeout

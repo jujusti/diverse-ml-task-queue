@@ -58,3 +58,6 @@ type ConsumerConfig struct {
 	OrchestratorUser     string
 	OrchestratorPassword string
 	StorageHost          string
+	StoragePort          int
+	StorageUser          string
+	StoragePa

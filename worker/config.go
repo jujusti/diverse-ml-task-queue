@@ -50,4 +50,7 @@ type ConsumerConfig struct {
 	LearnParallelism   int
 	PredictParallelism int
 	LearnTimeout       time.Duration
-	PredictTimeout
+	PredictTimeout     time.Duration
+
+	// Other compute services
+	OrchestratorHost

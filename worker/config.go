@@ -67,4 +67,5 @@ type ConsumerConfig struct {
 	DockerTimeout time.Duration
 }
 
-// NewConsumerConfig parses CL
+// NewConsumerConfig parses CLI flags, generates and validates a ConsumerConfig
+fun

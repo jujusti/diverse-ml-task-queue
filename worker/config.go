@@ -64,4 +64,7 @@ type ConsumerConfig struct {
 
 	// Container Runtime
 	DockerHost    string
-	DockerTime
+	DockerTimeout time.Duration
+}
+
+// NewConsumerConfig parses CL

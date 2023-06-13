@@ -55,4 +55,6 @@ type ConsumerConfig struct {
 	// Other compute services
 	OrchestratorHost     string
 	OrchestratorPort     int
-	OrchestratorUser     
+	OrchestratorUser     string
+	OrchestratorPassword string
+	StorageHost          string

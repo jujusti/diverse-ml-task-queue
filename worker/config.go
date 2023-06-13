@@ -70,4 +70,6 @@ type ConsumerConfig struct {
 // NewConsumerConfig parses CLI flags, generates and validates a ConsumerConfig
 func NewConsumerConfig() (conf *ConsumerConfig) {
 	var (
-		nsqlooku
+		nsqlookupdURLs     common.MultiStringFlag
+		nsqdURL            string
+		

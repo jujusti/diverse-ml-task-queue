@@ -60,4 +60,8 @@ type ConsumerConfig struct {
 	StorageHost          string
 	StoragePort          int
 	StorageUser          string
-	StoragePa
+	StoragePassword      string
+
+	// Container Runtime
+	DockerHost    string
+	DockerTime

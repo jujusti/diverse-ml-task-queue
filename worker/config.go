@@ -53,4 +53,6 @@ type ConsumerConfig struct {
 	PredictTimeout     time.Duration
 
 	// Other compute services
-	OrchestratorHost
+	OrchestratorHost     string
+	OrchestratorPort     int
+	OrchestratorUser     

@@ -68,4 +68,6 @@ type ConsumerConfig struct {
 }
 
 // NewConsumerConfig parses CLI flags, generates and validates a ConsumerConfig
-fun
+func NewConsumerConfig() (conf *ConsumerConfig) {
+	var (
+		nsqlooku

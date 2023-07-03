@@ -77,4 +77,6 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 		learnTimeout       time.Duration
 		predictTimeout     time.Duration
 
-		orchestratorHost  
+		orchestratorHost     string
+		orchestratorPort     int
+		orchestratorUser     s

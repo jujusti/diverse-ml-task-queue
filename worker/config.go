@@ -79,4 +79,6 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 
 		orchestratorHost     string
 		orchestratorPort     int
-		orchestratorUser     s
+		orchestratorUser     string
+		orchestratorPassword string
+		storage

@@ -72,4 +72,6 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 	var (
 		nsqlookupdURLs     common.MultiStringFlag
 		nsqdURL            string
-		
+		learnParallelism   int
+		predictParallelism int
+		learn

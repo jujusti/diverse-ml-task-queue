@@ -74,4 +74,7 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 		nsqdURL            string
 		learnParallelism   int
 		predictParallelism int
-		learn
+		learnTimeout       time.Duration
+		predictTimeout     time.Duration
+
+		orchestratorHost  

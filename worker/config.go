@@ -83,4 +83,8 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 		orchestratorPassword string
 		storageHost          string
 		storagePort          int
-		storageUs
+		storageUser          string
+		storagePassword      string
+
+		dockerHost    string
+	

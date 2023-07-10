@@ -91,4 +91,5 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 	)
 
 	// CLI Flags
-	flag.Var(&nsqlookupdURLs, "nsqlookupd-urls", "URL(
+	flag.Var(&nsqlookupdURLs, "nsqlookupd-urls", "URL(s) of NSQLookupd instances to connect to")
+	flag.StringVar(&nsqdURL, "h

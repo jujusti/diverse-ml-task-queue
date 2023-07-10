@@ -87,4 +87,8 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 		storagePassword      string
 
 		dockerHost    string
+		dockerTimeout time.Duration
+	)
+
+	// CLI Flags
 	

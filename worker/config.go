@@ -94,4 +94,4 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 	flag.Var(&nsqlookupdURLs, "nsqlookupd-urls", "URL(s) of NSQLookupd instances to connect to")
 	flag.StringVar(&nsqdURL, "http-address", "nsqd:4151", "URL of NSQd instance to connect to")
 	flag.IntVar(&learnParallelism, "learn-parallelism", 1, "Number of learning task that this worker can execute in parallel.")
-	flag.IntVar(&predi
+	flag.IntVar(&predictParallelism, "predict-parallelism", 1, "Number of lea

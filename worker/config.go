@@ -96,4 +96,4 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 	flag.IntVar(&learnParallelism, "learn-parallelism", 1, "Number of learning task that this worker can execute in parallel.")
 	flag.IntVar(&predictParallelism, "predict-parallelism", 1, "Number of learning task that this worker can execute in parallel.")
 	flag.DurationVar(&learnTimeout, "learn-timeout", 20*time.Minute, "After this delay, learning tasks are timed out (default: 20m)")
-	f
+	flag.DurationVar(&predictTimeout, "predict-timeout", 20*time.Minute

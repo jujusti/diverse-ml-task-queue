@@ -99,4 +99,5 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 	flag.DurationVar(&predictTimeout, "predict-timeout", 20*time.Minute, "After this delay, prediction tasks are timed out (default: 20m)")
 
 	flag.StringVar(&orchestratorHost, "orchestrator-host", "", "Hostname of the orchestrator to send notifications to (leave blank to use the Orchestrator API Mock)")
-	flag.IntVar(&orchestratorPort, "orchestrator-port", 80, "TCP port to contact 
+	flag.IntVar(&orchestratorPort, "orchestrator-port", 80, "TCP port to contact the orchestrator on (default: 80)")
+	flag.StringVar(&orchestratorUser, "

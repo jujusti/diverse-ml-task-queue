@@ -101,4 +101,4 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 	flag.StringVar(&orchestratorHost, "orchestrator-host", "", "Hostname of the orchestrator to send notifications to (leave blank to use the Orchestrator API Mock)")
 	flag.IntVar(&orchestratorPort, "orchestrator-port", 80, "TCP port to contact the orchestrator on (default: 80)")
 	flag.StringVar(&orchestratorUser, "orchestrator-user", "u", "Basic Authentication username of the orchestrator API")
-	flag.StringVar(&orchestratorPassword, "orchestra
+	flag.StringVar(&orchestratorPassword, "orchestrator-password", "p", "Basic Authentication password of the or

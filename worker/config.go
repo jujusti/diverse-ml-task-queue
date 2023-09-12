@@ -103,4 +103,4 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 	flag.StringVar(&orchestratorUser, "orchestrator-user", "u", "Basic Authentication username of the orchestrator API")
 	flag.StringVar(&orchestratorPassword, "orchestrator-password", "p", "Basic Authentication password of the orchestrator API")
 
-	flag.StringVar(&storageHost, "storage-h
+	flag.StringVar(&storageHost, "storage-host", "", "Hostname of the storage API to retr

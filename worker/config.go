@@ -106,4 +106,6 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 	flag.StringVar(&storageHost, "storage-host", "", "Hostname of the storage API to retrieve data from (leave blank to use the Storage API Mock)")
 	flag.IntVar(&storagePort, "storage-port", 80, "TCP port to contact storage on (default: 80)")
 	flag.StringVar(&storageUser, "storage-user", "u", "Basic Authentication username of the storage API")
-	flag.StringVar(&storagePassword, "storage-password", "p", "Basic Authentication password of the storage 
+	flag.StringVar(&storagePassword, "storage-password", "p", "Basic Authentication password of the storage API")
+
+	flag.DurationVar(&dockerTimeout, "docker-timeout", 15

@@ -104,4 +104,4 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 	flag.StringVar(&orchestratorPassword, "orchestrator-password", "p", "Basic Authentication password of the orchestrator API")
 
 	flag.StringVar(&storageHost, "storage-host", "", "Hostname of the storage API to retrieve data from (leave blank to use the Storage API Mock)")
-	flag.IntVar
+	flag.IntVar(&storagePort, "storage-port", 80, "TCP port to contact sto

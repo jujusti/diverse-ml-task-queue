@@ -108,4 +108,6 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 	flag.StringVar(&storageUser, "storage-user", "u", "Basic Authentication username of the storage API")
 	flag.StringVar(&storagePassword, "storage-password", "p", "Basic Authentication password of the storage API")
 
-	flag.DurationVar(&dockerTimeout, "docker-timeout", 15*time.Minute, "Docker commands timeout (concerns bu
+	flag.DurationVar(&dockerTimeout, "docker-timeout", 15*time.Minute, "Docker commands timeout (concerns builds, runs, pulls, etc...) (default: 15m)")
+
+	flag.Parse(

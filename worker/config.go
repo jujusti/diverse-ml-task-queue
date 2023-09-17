@@ -125,4 +125,6 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 		PredictTimeout:     predictTimeout,
 
 		// Other compute services
-		OrchestratorHost:     orchestratorH
+		OrchestratorHost:     orchestratorHost,
+		OrchestratorPort:     orchestratorPort,
+		Orchestrator

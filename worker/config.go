@@ -116,4 +116,6 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 		nsqlookupdURLs = append(nsqlookupdURLs, "nsqlookupd:4161")
 	}
 
-	return &Con
+	return &ConsumerConfig{
+		NsqlookupdURLs:     nsqlookupdURLs,
+		NsqdURL:    

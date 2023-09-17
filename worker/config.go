@@ -119,4 +119,6 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 	return &ConsumerConfig{
 		NsqlookupdURLs:     nsqlookupdURLs,
 		NsqdURL:            nsqdURL,
-		LearnParallelism:   learnParalleli
+		LearnParallelism:   learnParallelism,
+		PredictParallelism: predictParallelism,
+		LearnTimeout:  

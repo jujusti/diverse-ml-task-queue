@@ -113,4 +113,7 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 	flag.Parse()
 
 	if len(nsqlookupdURLs) == 0 {
-		nsqlookupdURLs = app
+		nsqlookupdURLs = append(nsqlookupdURLs, "nsqlookupd:4161")
+	}
+
+	return &Con

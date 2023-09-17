@@ -110,4 +110,7 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 
 	flag.DurationVar(&dockerTimeout, "docker-timeout", 15*time.Minute, "Docker commands timeout (concerns builds, runs, pulls, etc...) (default: 15m)")
 
-	flag.Parse(
+	flag.Parse()
+
+	if len(nsqlookupdURLs) == 0 {
+		nsqlookupdURLs = app

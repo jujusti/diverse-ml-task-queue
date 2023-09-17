@@ -127,4 +127,5 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 		// Other compute services
 		OrchestratorHost:     orchestratorHost,
 		OrchestratorPort:     orchestratorPort,
-		Orchestrator
+		OrchestratorUser:     orchestratorUser,
+		OrchestratorPassword

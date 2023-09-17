@@ -124,4 +124,5 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 		LearnTimeout:       learnTimeout,
 		PredictTimeout:     predictTimeout,
 
-		
+		// Other compute services
+		OrchestratorHost:     orchestratorH

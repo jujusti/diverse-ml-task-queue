@@ -128,4 +128,6 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 		OrchestratorHost:     orchestratorHost,
 		OrchestratorPort:     orchestratorPort,
 		OrchestratorUser:     orchestratorUser,
-		OrchestratorPassword
+		OrchestratorPassword: orchestratorPassword,
+		StorageHost:          storageHost,
+		Stor

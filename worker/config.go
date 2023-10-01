@@ -130,4 +130,6 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 		OrchestratorUser:     orchestratorUser,
 		OrchestratorPassword: orchestratorPassword,
 		StorageHost:          storageHost,
-		Stor
+		StoragePort:          storagePort,
+		StorageUser:          storageUser,
+		Stora

@@ -132,4 +132,7 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 		StorageHost:          storageHost,
 		StoragePort:          storagePort,
 		StorageUser:          storageUser,
-		Stora
+		StoragePassword:      storagePassword,
+
+		// Container Runtime
+		Docke

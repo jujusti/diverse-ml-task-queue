@@ -135,4 +135,6 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 		StoragePassword:      storagePassword,
 
 		// Container Runtime
-		Docke
+		DockerHost:    dockerHost,
+		DockerTimeout: dockerTimeout,
+	}

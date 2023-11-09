@@ -138,3 +138,4 @@ func NewConsumerConfig() (conf *ConsumerConfig) {
 		DockerHost:    dockerHost,
 		DockerTimeout: dockerTimeout,
 	}
+}

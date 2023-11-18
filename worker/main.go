@@ -7,4 +7,5 @@
  * learning platform.
  *
  * This software is governed by the CeCILL license, compatible with the
- * GNU GPL, under French 
+ * GNU GPL, under French law and abiding by the rules of distribution of
+ * free so

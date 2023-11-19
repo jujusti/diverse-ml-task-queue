@@ -8,4 +8,4 @@
  *
  * This software is governed by the CeCILL license, compatible with the
  * GNU GPL, under French law and abiding by the rules of distribution of
- * free so
+ * free software. You can  use, modify and/ or redistribute the software

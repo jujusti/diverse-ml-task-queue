@@ -18,4 +18,5 @@
  * economic rights,  and the successive licensors  have only  limited
  * liability.
  *
- * In t
+ * In this respect, the user's attention is drawn to the risks associated
+ * with

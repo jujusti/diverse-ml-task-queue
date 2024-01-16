@@ -24,4 +24,5 @@
  * that may mean  that it is complicated to manipulate,  and  that  also
  * therefore means  that it is reserved for developers  and  experienced
  * professionals having in-depth computer knowledge. Users are therefore
- * encourage
+ * encouraged to load and test the software's suitability as regards their
+ * requi

@@ -49,4 +49,5 @@ import (
 func main() {
 	conf := NewConsumerConfig()
 
-	// Let's connect with Storage (or use our mock i
+	// Let's connect with Storage (or use our mock if no storage host was provided)
+	var storageBackend client.Stora

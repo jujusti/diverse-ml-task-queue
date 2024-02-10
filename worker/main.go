@@ -49,3 +49,4 @@ import (
 func main() {
 	conf := NewConsumerConfig()
 
+	// Let's connect with Storage (or use our mock i

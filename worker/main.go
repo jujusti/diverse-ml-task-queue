@@ -52,4 +52,6 @@ func main() {
 	// Let's connect with Storage (or use our mock if no storage host was provided)
 	var storageBackend client.Storage
 	// if conf.StorageHost != "" {
-	storageBackend = &client.
+	storageBackend = &client.StorageAPI{
+		Hostname: conf.StorageHost,
+		Port:     conf.StoragePort

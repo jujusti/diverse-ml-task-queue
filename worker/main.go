@@ -54,4 +54,6 @@ func main() {
 	// if conf.StorageHost != "" {
 	storageBackend = &client.StorageAPI{
 		Hostname: conf.StorageHost,
-		Port:     conf.StoragePort
+		Port:     conf.StoragePort,
+		User:     conf.StorageUser,
+		Password: conf.S

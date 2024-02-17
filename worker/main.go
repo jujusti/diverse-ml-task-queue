@@ -56,4 +56,7 @@ func main() {
 		Hostname: conf.StorageHost,
 		Port:     conf.StoragePort,
 		User:     conf.StorageUser,
-		Password: conf.S
+		Password: conf.StoragePassword,
+	}
+	// } else {
+	// 	storageBackend = cl

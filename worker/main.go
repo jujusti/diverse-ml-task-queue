@@ -59,4 +59,7 @@ func main() {
 		Password: conf.StoragePassword,
 	}
 	// } else {
-	// 	storageBackend = cl
+	// 	storageBackend = client.NewStorageAPIMock()
+	// }
+
+	// Let's create our 

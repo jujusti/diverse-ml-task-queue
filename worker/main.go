@@ -62,4 +62,5 @@ func main() {
 	// 	storageBackend = client.NewStorageAPIMock()
 	// }
 
-	// Let's create our 
+	// Let's create our peer client to request the blockchain
+	peer, err := client.

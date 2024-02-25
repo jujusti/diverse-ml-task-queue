@@ -73,4 +73,6 @@ func main() {
 		log.Panicf("Error creating peer client: %s", err)
 	}
 
-	// Let's hook to our container 
+	// Let's hook to our container backend and create a Worker instance containing
+	// our message handlers
+	

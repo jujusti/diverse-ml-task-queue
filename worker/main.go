@@ -66,4 +66,8 @@ func main() {
 	peer, err := client.NewPeerAPI(
 		"secrets/config.yaml",
 		"Aphp",
-		"mychannel"
+		"mychannel",
+		"mycc",
+	)
+	if err != nil {
+		log.Panicf("Error creat

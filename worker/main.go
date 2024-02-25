@@ -70,4 +70,7 @@ func main() {
 		"mycc",
 	)
 	if err != nil {
-		log.Panicf("Error creat
+		log.Panicf("Error creating peer client: %s", err)
+	}
+
+	// Let's hook to our container 

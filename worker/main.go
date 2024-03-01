@@ -75,4 +75,4 @@ func main() {
 
 	// Let's hook to our container backend and create a Worker instance containing
 	// our message handlers
-	
+	containerRuntime, err := common.NewDockerRuntime(conf.DockerT

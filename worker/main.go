@@ -80,4 +80,6 @@ func main() {
 		log.Panicf("[FATAL ERROR] Impossible to connect to Docker container backend: %s", err)
 	}
 
-	worker := &W
+	worker := &Worker{
+		ID: uuid.NewV4(),
+		// Root folder for train/test

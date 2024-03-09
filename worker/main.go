@@ -75,4 +75,6 @@ func main() {
 
 	// Let's hook to our container backend and create a Worker instance containing
 	// our message handlers
-	containerRuntime, err := common.NewDockerRuntime(conf.DockerT
+	containerRuntime, err := common.NewDockerRuntime(conf.DockerTimeout)
+	if err != nil {
+		log.Panicf("[FATAL ERROR] I

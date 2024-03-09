@@ -77,4 +77,7 @@ func main() {
 	// our message handlers
 	containerRuntime, err := common.NewDockerRuntime(conf.DockerTimeout)
 	if err != nil {
-		log.Panicf("[FATAL ERROR] I
+		log.Panicf("[FATAL ERROR] Impossible to connect to Docker container backend: %s", err)
+	}
+
+	worker := &W

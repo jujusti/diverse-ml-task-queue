@@ -82,4 +82,4 @@ func main() {
 
 	worker := &Worker{
 		ID: uuid.NewV4(),
-		// Root folder for train/test
+		// Root folder for train/test/predict data (should shared with the container runtime)

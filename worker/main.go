@@ -85,4 +85,6 @@ func main() {
 		// Root folder for train/test/predict data (should shared with the container runtime)
 		dataFolder: "/data",
 		// Subfolder names
-		trainFolder:  
+		trainFolder:          "train",
+		testFolder:           "test",
+		predFolder:     

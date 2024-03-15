@@ -87,4 +87,6 @@ func main() {
 		// Subfolder names
 		trainFolder:          "train",
 		testFolder:           "test",
-		predFolder:     
+		predFolder:           "pred",
+		perfFolder:           "perf",
+		untargetedTestFolder: "unt

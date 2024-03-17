@@ -89,4 +89,6 @@ func main() {
 		testFolder:           "test",
 		predFolder:           "pred",
 		perfFolder:           "perf",
-		untargetedTestFolder: "unt
+		untargetedTestFolder: "untargeted_test",
+		modelFolder:          "model",
+		// Containe

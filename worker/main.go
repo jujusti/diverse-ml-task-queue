@@ -91,4 +91,6 @@ func main() {
 		perfFolder:           "perf",
 		untargetedTestFolder: "untargeted_test",
 		modelFolder:          "model",
-		// Containe
+		// Container runtime image name prefixes
+		problemImagePrefix: "problem",
+		algoIma

@@ -93,4 +93,6 @@ func main() {
 		modelFolder:          "model",
 		// Container runtime image name prefixes
 		problemImagePrefix: "problem",
-		algoIma
+		algoImagePrefix:    "algo",
+		// Dependency injection is done here :)
+		con

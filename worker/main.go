@@ -95,4 +95,5 @@ func main() {
 		problemImagePrefix: "problem",
 		algoImagePrefix:    "algo",
 		// Dependency injection is done here :)
-		con
+		containerRuntime: containerRuntime,
+		storag

@@ -96,4 +96,6 @@ func main() {
 		algoImagePrefix:    "algo",
 		// Dependency injection is done here :)
 		containerRuntime: containerRuntime,
-		storag
+		storage:          storageBackend,
+		peer:             peer,
+	}

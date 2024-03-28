@@ -99,3 +99,6 @@ func main() {
 		storage:          storageBackend,
 		peer:             peer,
 	}
+
+	// Let's hook with our consumer
+	consumer := common.NewNSQCo

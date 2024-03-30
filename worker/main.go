@@ -110,4 +110,4 @@ func main() {
 	)
 
 	// Wire our message handlers
-	consumer.AddHand
+	consumer.AddHandler(common.TrainTopic, worker.HandleLearn, conf.LearnParallelism, conf.Le

@@ -105,4 +105,5 @@ func main() {
 		conf.NsqlookupdURLs,
 		conf.NsqdURL,
 		"compute",
-		
+		5*time.Second,
+		log.New(os.Stdout, "[NSQ]", l

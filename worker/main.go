@@ -106,4 +106,8 @@ func main() {
 		conf.NsqdURL,
 		"compute",
 		5*time.Second,
-		log.New(os.Stdout, "[NSQ]", l
+		log.New(os.Stdout, "[NSQ]", log.LstdFlags),
+	)
+
+	// Wire our message handlers
+	consumer.AddHand

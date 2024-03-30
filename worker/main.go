@@ -101,4 +101,8 @@ func main() {
 	}
 
 	// Let's hook with our consumer
-	consumer := common.NewNSQCo
+	consumer := common.NewNSQConsumer(
+		conf.NsqlookupdURLs,
+		conf.NsqdURL,
+		"compute",
+		

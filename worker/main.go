@@ -111,4 +111,9 @@ func main() {
 
 	// Wire our message handlers
 	consumer.AddHandler(common.TrainTopic, worker.HandleLearn, conf.LearnParallelism, conf.LearnTimeout)
-	consumer.AddHandler(common.PredictTopic, worker.HandlePred, conf.PredictParallelism, conf.PredictTim
+	consumer.AddHandler(common.PredictTopic, worker.HandlePred, conf.PredictParallelism, conf.PredictTimeout)
+
+	if err != nil {
+		log.Panicln(err)
+	}
+	// Let's c

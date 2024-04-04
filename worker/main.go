@@ -117,4 +117,6 @@ func main() {
 		log.Panicln(err)
 	}
 	// Let's connect to the for real and start pulling tasks
-	consumer.Co
+	consumer.ConsumeUntilKilled()
+
+	log.Println("[INFO] Consumer has been g

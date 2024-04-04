@@ -116,4 +116,5 @@ func main() {
 	if err != nil {
 		log.Panicln(err)
 	}
-	// Let's c
+	// Let's connect to the for real and start pulling tasks
+	consumer.Co

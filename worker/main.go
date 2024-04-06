@@ -119,4 +119,6 @@ func main() {
 	// Let's connect to the for real and start pulling tasks
 	consumer.ConsumeUntilKilled()
 
-	log.Println("[INFO] Consumer has been g
+	log.Println("[INFO] Consumer has been gracefully stopped... Bye bye!")
+	return
+}

@@ -113,3 +113,39 @@ func TestHandleLearn(t *testing.T) {
 
 // 	// Create a tar-gzed model mock in tmp
 // 	modelID := preduplet.Data.String()
+// 	tmpPathPerfFile := filepath.Join(taskDataFolder, filepath.Join("test/pred/", modelID))
+
+// 	f, err := os.Create(tmpPathPerfFile)
+// 	assert.Nil(t, err)
+
+// 	mock, err := TargzedMock()
+// 	assert.Nil(t, err)
+
+// 	_, err = io.Copy(f, mock)
+// 	assert.Nil(t, err)
+
+// 	f.Close()
+
+// 	// Test the whole pipeline works
+// 	preduplet := preduplet
+// 	msg, _ := json.Marshal(preduplet)
+// 	assert.Nil(t, worker.HandlePred(msg))
+// }
+
+// TargzedMock create a Readcloser which can be ungzip-ed
+func TargzedMock() (io.ReadCloser, error) {
+	// Create tmp file
+	tmpPath := filepath.Join(os.TempDir(), "morpheo_mock")
+	if err := ioutil.WriteFile(tmpPath, []byte("mock"), 0777); err != nil {
+		return nil, fmt.Errorf("Error writing file: %s", err)
+	}
+	f, _ := os.Open(tmpPath)
+	defer os.Remove(tmpPath)
+
+	buf := bytes.NewBuffer([]byte(""))
+	if err := TargzFile(f, buf); err != nil {
+		return nil, fmt.Errorf("Error Targz-ing the file: %s", err)
+	}
+
+	return ioutil.NopCloser(buf), nil
+}

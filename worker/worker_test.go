@@ -62,3 +62,54 @@ func TestMain(m *testing.M) {
 	// Create storage Mock
 	storageMock, err := client.NewStorageAPIMock()
 	if err != nil {
+		log.Panicln("Error loading Storage Mock: ", err)
+	}
+
+	// Let's finally create our worker
+	tmpPathData = filepath.Join(os.TempDir(), "morpheo_tmp_data")
+	worker = NewWorker(
+		tmpPathData, "train", "test", "untargeted_test", "pred", "perf", "model",
+		"problem", "algo", containerRuntime,
+		storageMock, &client.PeerMock{},
+	)
+
+	// Run the tests
+	exitcode := m.Run()
+
+	// Wipe out everything once the tests are done/failed
+	if err := os.RemoveAll(tmpPathData); err != nil {
+		log.Println(err)
+	}
+
+	os.Exit(exitcode)
+}
+
+func TestHandleLearn(t *testing.T) {
+	// t.Parallel()
+
+	// Pre-setup directory structure for Learn to avoid permission issues
+	taskDataFolder := filepath.Join(tmpPathData, learnuplet.Algo.String())
+	assert.Nil(t, worker.SetupDirectories(taskDataFolder, 0777))
+
+	// Create performance.json in tmp
+	tmpPathPerfFile := filepath.Join(taskDataFolder, "perf/performance.json")
+	f, err := os.Create(tmpPathPerfFile)
+	assert.Nil(t, err)
+	_, err = f.Write([]byte(perfString))
+	assert.Nil(t, err)
+	f.Close()
+
+	// Test the whole pipeline works...
+	msg, _ := json.Marshal(learnuplet)
+	assert.Nil(t, worker.HandleLearn(msg))
+}
+
+// func TestHandlePred(t *testing.T) {
+// 	// t.Parallel()
+
+// 	// Pre-setup directory structure for Pred to avoid permission issues
+// 	taskDataFolder := filepath.Join(tmpPathData, preduplet.Model.String())
+// 	assert.Nil(t, worker.SetupDirectories(taskDataFolder, 0777))
+
+// 	// Create a tar-gzed model mock in tmp
+// 	modelID := preduplet.Data.String()
